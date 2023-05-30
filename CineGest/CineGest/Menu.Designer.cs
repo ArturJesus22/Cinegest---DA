@@ -1,6 +1,6 @@
 ﻿namespace CineGest
 {
-    partial class Form1
+    partial class Menu
     {
         /// <summary>
         /// Variável de designer necessária.
