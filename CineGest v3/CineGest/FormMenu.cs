@@ -91,6 +91,11 @@ namespace WindowsFormsApp1
                 this.Close();
             }
         }
+
+        private void painelContentor_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 

@@ -64,6 +64,7 @@
             this.painelContentor.Name = "painelContentor";
             this.painelContentor.Size = new System.Drawing.Size(1099, 611);
             this.painelContentor.TabIndex = 21;
+            this.painelContentor.Paint += new System.Windows.Forms.PaintEventHandler(this.painelContentor_Paint);
             // 
             // lblUpperMenu
             // 
