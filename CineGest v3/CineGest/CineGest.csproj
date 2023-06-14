@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,75 +61,77 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bilhete.cs" />
-    <Compile Include="Categoria.cs" />
-    <Compile Include="Cinema.cs" />
-    <Compile Include="Cliente.cs" />
-    <Compile Include="Filme.cs" />
-    <Compile Include="FormLogin.cs">
+    <Compile Include="Controller\Bilhete.cs" />
+    <Compile Include="Controller\Categoria.cs" />
+    <Compile Include="Controller\Cinema.cs" />
+    <Compile Include="Controller\Cliente.cs" />
+    <Compile Include="Controller\MainController.cs" />
+    <Compile Include="Controller\Filme.cs" />
+    <Compile Include="Model\DBConnection.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="View\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLogin.Designer.cs">
+    <Compile Include="View\FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMenu.cs">
+    <Compile Include="View\FormMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMenu.Designer.cs">
+    <Compile Include="View\FormMenu.Designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Funcionario.cs" />
-    <Compile Include="Pessoa.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Controller\Funcionario.cs" />
+    <Compile Include="Controller\Pessoa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sala.cs" />
-    <Compile Include="Sessao.cs" />
-    <Compile Include="ucAdmin.cs">
+    <Compile Include="Controller\Sala.cs" />
+    <Compile Include="Controller\Sessao.cs" />
+    <Compile Include="View\ucAdmin.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucAdmin.Designer.cs">
+    <Compile Include="View\ucAdmin.Designer.cs">
       <DependentUpon>ucAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucAtendimento.cs">
+    <Compile Include="View\ucAtendimento.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucAtendimento.Designer.cs">
+    <Compile Include="View\ucAtendimento.Designer.cs">
       <DependentUpon>ucAtendimento.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucCinema.cs">
+    <Compile Include="View\ucCinema.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucCinema.Designer.cs">
+    <Compile Include="View\ucCinema.Designer.cs">
       <DependentUpon>ucCinema.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucClientes.cs">
+    <Compile Include="View\ucClientes.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucClientes.Designer.cs">
+    <Compile Include="View\ucClientes.Designer.cs">
       <DependentUpon>ucClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucFilmes.cs">
+    <Compile Include="View\ucFilmes.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucFilmes.Designer.cs">
+    <Compile Include="View\ucFilmes.Designer.cs">
       <DependentUpon>ucFilmes.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucHome.cs">
+    <Compile Include="View\ucHome.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucHome.Designer.cs">
+    <Compile Include="View\ucHome.Designer.cs">
       <DependentUpon>ucHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucSessoes.cs">
+    <Compile Include="View\ucSessoes.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucSessoes.Designer.cs">
+    <Compile Include="View\ucSessoes.Designer.cs">
       <DependentUpon>ucSessoes.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormLogin.resx">
+    <EmbeddedResource Include="View\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMenu.resx">
+    <EmbeddedResource Include="View\FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -126,25 +143,25 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ucAdmin.resx">
+    <EmbeddedResource Include="View\ucAdmin.resx">
       <DependentUpon>ucAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucAtendimento.resx">
+    <EmbeddedResource Include="View\ucAtendimento.resx">
       <DependentUpon>ucAtendimento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucCinema.resx">
+    <EmbeddedResource Include="View\ucCinema.resx">
       <DependentUpon>ucCinema.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucClientes.resx">
+    <EmbeddedResource Include="View\ucClientes.resx">
       <DependentUpon>ucClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucFilmes.resx">
+    <EmbeddedResource Include="View\ucFilmes.resx">
       <DependentUpon>ucFilmes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucHome.resx">
+    <EmbeddedResource Include="View\ucHome.resx">
       <DependentUpon>ucHome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucSessoes.resx">
+    <EmbeddedResource Include="View\ucSessoes.resx">
       <DependentUpon>ucSessoes.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -159,6 +176,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CineGest.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CineGest_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>CineGest.mdf</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
