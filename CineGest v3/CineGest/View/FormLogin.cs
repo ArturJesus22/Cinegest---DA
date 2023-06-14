@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data.SqlClient;
+using System.Security.Cryptography;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -8,6 +10,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Model;
+using System.IO;
 
 namespace WindowsFormsApp1
 {
@@ -17,7 +21,7 @@ namespace WindowsFormsApp1
         public FormLogin()
         {
             InitializeComponent();
-            
+
         }
 
         private void FormLogin_Load(object sender, EventArgs e)
@@ -27,9 +31,9 @@ namespace WindowsFormsApp1
 
         private void imgOlho_Click(object sender, EventArgs e)
         {
-                txtPassword.UseSystemPasswordChar = false;
-                imgOlho.Visible = false;
-                picture_esconderpass.Visible = true;  
+            txtPassword.UseSystemPasswordChar = false;
+            imgOlho.Visible = false;
+            picture_esconderpass.Visible = true;
         }
 
         private void picture_esconderpass_Click(object sender, EventArgs e)
@@ -62,11 +66,22 @@ namespace WindowsFormsApp1
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            this.Close();
-            nt = new Thread(novoform); //inicia um novo processo, que é o form
-            nt.SetApartmentState(ApartmentState.STA);
-            nt.Start();
+            string username = txtPassword.Text;
+            string password = txtPassword.Text;
 
+            DBConnection dbConnection = new DBConnection();
+
+            if (dbConnection.DBConnect(username, password))
+            {
+                this.Close();
+                nt = new Thread(novoform); //inicia um novo processo, que é o form
+                nt.SetApartmentState(ApartmentState.STA);
+                nt.Start();
+            }
+            else
+            {
+                MessageBox.Show("Invalid User");
+            }
         }
 
         private void novoform() //método novoform, que corresponde ao ínicio do formulário principal
