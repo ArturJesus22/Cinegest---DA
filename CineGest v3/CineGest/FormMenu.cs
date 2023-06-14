@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.AxHost;
 
 
 namespace WindowsFormsApp1
@@ -23,20 +25,18 @@ namespace WindowsFormsApp1
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            DayOfWeek diaDaSemana = DateTime.Today.DayOfWeek;
-            string diaSemana = diaDaSemana.ToString();
-            int dia = DateTime.Now.Day;
-            string mes = DateTime.Today.ToString("MMMMMMMMM");
-            string data = diaSemana + "," + dia + " de " + mes;
+            string diaDaSemana = DateTime.Now.ToString("dddd, dd MMMM yyyy");
+            string data = diaDaSemana;
             lb_data.Text = data;
         }
         private void adicionarUserControl(UserControl userControl)
         {
             userControl.Dock = DockStyle.Fill;
-            painelContentor.Controls.Add(userControl);
             painelContentor.Controls.Clear();
+            painelContentor.Controls.Add(userControl);
             userControl.BringToFront();
         }
+
         private void lblDashboard_Click(object sender, EventArgs e)
         {
             ucHome uc = new ucHome();
@@ -92,9 +92,28 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void painelContentor_Paint(object sender, PaintEventArgs e)
+        private void pbCinema_Click(object sender, EventArgs e)
         {
+            ucCinema uc = new ucCinema();
+            adicionarUserControl(uc);
+        }
 
+        private void pbFilmes_Click(object sender, EventArgs e)
+        {
+            ucFilmes uc = new ucFilmes();
+            adicionarUserControl(uc);
+        }
+
+        private void pbSessoes_Click(object sender, EventArgs e)
+        {
+            ucSessoes uc = new ucSessoes();
+            adicionarUserControl(uc);
+        }
+
+        private void pbClientes_Click(object sender, EventArgs e)
+        {
+            ucClientes uc = new ucClientes();
+            adicionarUserControl(uc);
         }
     }
 }

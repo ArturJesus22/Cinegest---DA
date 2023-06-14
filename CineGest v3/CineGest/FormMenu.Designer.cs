@@ -47,6 +47,7 @@
             this.pbCinema = new System.Windows.Forms.PictureBox();
             this.pbClientes = new System.Windows.Forms.PictureBox();
             this.pbSair = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogoMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDashboard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAtendimento)).BeginInit();
@@ -59,20 +60,17 @@
             // 
             // painelContentor
             // 
-            this.painelContentor.Location = new System.Drawing.Point(326, 38);
-            this.painelContentor.Margin = new System.Windows.Forms.Padding(4);
+            this.painelContentor.Location = new System.Drawing.Point(244, 31);
             this.painelContentor.Name = "painelContentor";
-            this.painelContentor.Size = new System.Drawing.Size(1099, 611);
+            this.painelContentor.Size = new System.Drawing.Size(782, 532);
             this.painelContentor.TabIndex = 21;
-            this.painelContentor.Paint += new System.Windows.Forms.PaintEventHandler(this.painelContentor_Paint);
             // 
             // lblUpperMenu
             // 
             this.lblUpperMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(193)))), ((int)(((byte)(193)))));
-            this.lblUpperMenu.Location = new System.Drawing.Point(328, 0);
-            this.lblUpperMenu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUpperMenu.Location = new System.Drawing.Point(246, 0);
             this.lblUpperMenu.Name = "lblUpperMenu";
-            this.lblUpperMenu.Size = new System.Drawing.Size(1099, 38);
+            this.lblUpperMenu.Size = new System.Drawing.Size(824, 31);
             this.lblUpperMenu.TabIndex = 20;
             // 
             // lblClientes
@@ -80,58 +78,57 @@
             this.lblClientes.AutoSize = true;
             this.lblClientes.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClientes.ForeColor = System.Drawing.Color.White;
-            this.lblClientes.Location = new System.Drawing.Point(114, 515);
-            this.lblClientes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblClientes.Location = new System.Drawing.Point(86, 427);
             this.lblClientes.Name = "lblClientes";
-            this.lblClientes.Size = new System.Drawing.Size(113, 32);
+            this.lblClientes.Size = new System.Drawing.Size(86, 24);
             this.lblClientes.TabIndex = 19;
             this.lblClientes.Text = "Clientes";
+            this.lblClientes.Click += new System.EventHandler(this.lblClientes_Click);
             // 
             // lblSessoes
             // 
             this.lblSessoes.AutoSize = true;
             this.lblSessoes.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSessoes.ForeColor = System.Drawing.Color.White;
-            this.lblSessoes.Location = new System.Drawing.Point(113, 450);
-            this.lblSessoes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSessoes.Location = new System.Drawing.Point(85, 375);
             this.lblSessoes.Name = "lblSessoes";
-            this.lblSessoes.Size = new System.Drawing.Size(119, 32);
+            this.lblSessoes.Size = new System.Drawing.Size(93, 24);
             this.lblSessoes.TabIndex = 18;
             this.lblSessoes.Text = "Sessões";
+            this.lblSessoes.Click += new System.EventHandler(this.lblSessoes_Click);
             // 
             // lblFilmes
             // 
             this.lblFilmes.AutoSize = true;
             this.lblFilmes.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFilmes.ForeColor = System.Drawing.Color.White;
-            this.lblFilmes.Location = new System.Drawing.Point(113, 395);
-            this.lblFilmes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFilmes.Location = new System.Drawing.Point(85, 330);
             this.lblFilmes.Name = "lblFilmes";
-            this.lblFilmes.Size = new System.Drawing.Size(94, 32);
+            this.lblFilmes.Size = new System.Drawing.Size(71, 24);
             this.lblFilmes.TabIndex = 17;
             this.lblFilmes.Text = "Filmes";
+            this.lblFilmes.Click += new System.EventHandler(this.pbFilmes_Click);
             // 
             // lblCinema
             // 
             this.lblCinema.AutoSize = true;
             this.lblCinema.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCinema.ForeColor = System.Drawing.Color.White;
-            this.lblCinema.Location = new System.Drawing.Point(113, 339);
-            this.lblCinema.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCinema.Location = new System.Drawing.Point(85, 282);
             this.lblCinema.Name = "lblCinema";
-            this.lblCinema.Size = new System.Drawing.Size(107, 32);
+            this.lblCinema.Size = new System.Drawing.Size(81, 24);
             this.lblCinema.TabIndex = 16;
             this.lblCinema.Text = "Cinema";
+            this.lblCinema.Click += new System.EventHandler(this.lblCinema_Click);
             // 
             // lblAtendimento
             // 
             this.lblAtendimento.AutoSize = true;
             this.lblAtendimento.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAtendimento.ForeColor = System.Drawing.Color.White;
-            this.lblAtendimento.Location = new System.Drawing.Point(114, 282);
-            this.lblAtendimento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAtendimento.Location = new System.Drawing.Point(86, 236);
             this.lblAtendimento.Name = "lblAtendimento";
-            this.lblAtendimento.Size = new System.Drawing.Size(166, 32);
+            this.lblAtendimento.Size = new System.Drawing.Size(125, 24);
             this.lblAtendimento.TabIndex = 15;
             this.lblAtendimento.Text = "Atendimento";
             this.lblAtendimento.Click += new System.EventHandler(this.lblAtendimento_Click);
@@ -141,10 +138,9 @@
             this.lblDashboard.AutoSize = true;
             this.lblDashboard.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDashboard.ForeColor = System.Drawing.Color.White;
-            this.lblDashboard.Location = new System.Drawing.Point(113, 221);
-            this.lblDashboard.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDashboard.Location = new System.Drawing.Point(85, 180);
             this.lblDashboard.Name = "lblDashboard";
-            this.lblDashboard.Size = new System.Drawing.Size(147, 32);
+            this.lblDashboard.Size = new System.Drawing.Size(112, 24);
             this.lblDashboard.TabIndex = 14;
             this.lblDashboard.Text = "Dashboard";
             this.lblDashboard.Click += new System.EventHandler(this.lblDashboard_Click);
@@ -154,10 +150,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(36, 176);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(27, 143);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 22);
+            this.label2.Size = new System.Drawing.Size(43, 17);
             this.label2.TabIndex = 13;
             this.label2.Text = "Menu";
             // 
@@ -166,18 +161,18 @@
             this.lb_data.AutoSize = true;
             this.lb_data.BackColor = System.Drawing.Color.Silver;
             this.lb_data.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_data.Location = new System.Drawing.Point(495, 9);
-            this.lb_data.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_data.Location = new System.Drawing.Point(371, 7);
             this.lb_data.Name = "lb_data";
-            this.lb_data.Size = new System.Drawing.Size(0, 25);
+            this.lb_data.Size = new System.Drawing.Size(0, 20);
             this.lb_data.TabIndex = 22;
             // 
             // pbLogoMenu
             // 
             this.pbLogoMenu.Image = ((System.Drawing.Image)(resources.GetObject("pbLogoMenu.Image")));
-            this.pbLogoMenu.Location = new System.Drawing.Point(31, 22);
+            this.pbLogoMenu.Location = new System.Drawing.Point(23, 18);
+            this.pbLogoMenu.Margin = new System.Windows.Forms.Padding(2);
             this.pbLogoMenu.Name = "pbLogoMenu";
-            this.pbLogoMenu.Size = new System.Drawing.Size(261, 106);
+            this.pbLogoMenu.Size = new System.Drawing.Size(196, 86);
             this.pbLogoMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbLogoMenu.TabIndex = 23;
             this.pbLogoMenu.TabStop = false;
@@ -185,9 +180,10 @@
             // pbDashboard
             // 
             this.pbDashboard.Image = ((System.Drawing.Image)(resources.GetObject("pbDashboard.Image")));
-            this.pbDashboard.Location = new System.Drawing.Point(60, 211);
+            this.pbDashboard.Location = new System.Drawing.Point(45, 171);
+            this.pbDashboard.Margin = new System.Windows.Forms.Padding(2);
             this.pbDashboard.Name = "pbDashboard";
-            this.pbDashboard.Size = new System.Drawing.Size(44, 47);
+            this.pbDashboard.Size = new System.Drawing.Size(33, 38);
             this.pbDashboard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbDashboard.TabIndex = 24;
             this.pbDashboard.TabStop = false;
@@ -195,9 +191,10 @@
             // pbAtendimento
             // 
             this.pbAtendimento.Image = ((System.Drawing.Image)(resources.GetObject("pbAtendimento.Image")));
-            this.pbAtendimento.Location = new System.Drawing.Point(52, 276);
+            this.pbAtendimento.Location = new System.Drawing.Point(39, 229);
+            this.pbAtendimento.Margin = new System.Windows.Forms.Padding(2);
             this.pbAtendimento.Name = "pbAtendimento";
-            this.pbAtendimento.Size = new System.Drawing.Size(54, 48);
+            this.pbAtendimento.Size = new System.Drawing.Size(40, 39);
             this.pbAtendimento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbAtendimento.TabIndex = 25;
             this.pbAtendimento.TabStop = false;
@@ -205,60 +202,78 @@
             // pbSessoes
             // 
             this.pbSessoes.Image = ((System.Drawing.Image)(resources.GetObject("pbSessoes.Image")));
-            this.pbSessoes.Location = new System.Drawing.Point(60, 445);
+            this.pbSessoes.Location = new System.Drawing.Point(45, 371);
+            this.pbSessoes.Margin = new System.Windows.Forms.Padding(2);
             this.pbSessoes.Name = "pbSessoes";
-            this.pbSessoes.Size = new System.Drawing.Size(44, 47);
+            this.pbSessoes.Size = new System.Drawing.Size(33, 38);
             this.pbSessoes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbSessoes.TabIndex = 26;
             this.pbSessoes.TabStop = false;
+            this.pbSessoes.Click += new System.EventHandler(this.pbSessoes_Click);
             // 
             // pbFilmes
             // 
             this.pbFilmes.Image = ((System.Drawing.Image)(resources.GetObject("pbFilmes.Image")));
-            this.pbFilmes.Location = new System.Drawing.Point(60, 389);
+            this.pbFilmes.Location = new System.Drawing.Point(45, 325);
+            this.pbFilmes.Margin = new System.Windows.Forms.Padding(2);
             this.pbFilmes.Name = "pbFilmes";
-            this.pbFilmes.Size = new System.Drawing.Size(44, 47);
+            this.pbFilmes.Size = new System.Drawing.Size(33, 38);
             this.pbFilmes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbFilmes.TabIndex = 27;
             this.pbFilmes.TabStop = false;
+            this.pbFilmes.Click += new System.EventHandler(this.pbFilmes_Click);
             // 
             // pbCinema
             // 
             this.pbCinema.Image = ((System.Drawing.Image)(resources.GetObject("pbCinema.Image")));
-            this.pbCinema.Location = new System.Drawing.Point(60, 332);
+            this.pbCinema.Location = new System.Drawing.Point(45, 277);
+            this.pbCinema.Margin = new System.Windows.Forms.Padding(2);
             this.pbCinema.Name = "pbCinema";
-            this.pbCinema.Size = new System.Drawing.Size(44, 47);
+            this.pbCinema.Size = new System.Drawing.Size(33, 38);
             this.pbCinema.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCinema.TabIndex = 28;
             this.pbCinema.TabStop = false;
+            this.pbCinema.Click += new System.EventHandler(this.pbCinema_Click);
             // 
             // pbClientes
             // 
             this.pbClientes.Image = ((System.Drawing.Image)(resources.GetObject("pbClientes.Image")));
-            this.pbClientes.Location = new System.Drawing.Point(62, 509);
+            this.pbClientes.Location = new System.Drawing.Point(46, 423);
+            this.pbClientes.Margin = new System.Windows.Forms.Padding(2);
             this.pbClientes.Name = "pbClientes";
-            this.pbClientes.Size = new System.Drawing.Size(44, 47);
+            this.pbClientes.Size = new System.Drawing.Size(33, 38);
             this.pbClientes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbClientes.TabIndex = 29;
             this.pbClientes.TabStop = false;
+            this.pbClientes.Click += new System.EventHandler(this.pbClientes_Click);
             // 
             // pbSair
             // 
             this.pbSair.Image = ((System.Drawing.Image)(resources.GetObject("pbSair.Image")));
-            this.pbSair.Location = new System.Drawing.Point(12, 603);
+            this.pbSair.Location = new System.Drawing.Point(9, 531);
+            this.pbSair.Margin = new System.Windows.Forms.Padding(2);
             this.pbSair.Name = "pbSair";
-            this.pbSair.Size = new System.Drawing.Size(48, 34);
+            this.pbSair.Size = new System.Drawing.Size(36, 28);
             this.pbSair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbSair.TabIndex = 30;
             this.pbSair.TabStop = false;
             this.pbSair.Click += new System.EventHandler(this.pbSair_Click);
             // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(245, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1, 567);
+            this.label1.TabIndex = 31;
+            // 
             // FormMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(29)))), ((int)(((byte)(54)))));
-            this.ClientSize = new System.Drawing.Size(1013, 649);
+            this.ClientSize = new System.Drawing.Size(1027, 564);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pbSair);
             this.Controls.Add(this.pbClientes);
             this.Controls.Add(this.pbDashboard);
@@ -277,7 +292,6 @@
             this.Controls.Add(this.lblAtendimento);
             this.Controls.Add(this.lblDashboard);
             this.Controls.Add(this.label2);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMenu";
             this.Text = "Cinema";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -314,6 +328,7 @@
         private System.Windows.Forms.PictureBox pbSessoes;
         private System.Windows.Forms.PictureBox pbAtendimento;
         private System.Windows.Forms.PictureBox pbSair;
+        private System.Windows.Forms.Label label1;
     }
 }
 

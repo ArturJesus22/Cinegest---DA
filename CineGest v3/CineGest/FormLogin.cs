@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,9 +13,11 @@ namespace WindowsFormsApp1
 {
     public partial class FormLogin : Form
     {
+        Thread nt;
         public FormLogin()
         {
             InitializeComponent();
+            
         }
 
         private void FormLogin_Load(object sender, EventArgs e)
@@ -62,7 +65,17 @@ namespace WindowsFormsApp1
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
-        { 
+        {
+            this.Close();
+            nt = new Thread(novoform); //inicia um novo processo, que é o form
+            nt.SetApartmentState(ApartmentState.STA);
+            nt.Start();
+
+        }
+
+        private void novoform() //método novoform, que corresponde ao ínicio do formulário principal
+        {
+            Application.Run(new FormMenu());
         }
     }
 }

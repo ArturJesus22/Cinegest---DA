@@ -29,3 +29,10 @@ C:\Users\Tomás Coelho\Desktop\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.u
 C:\Users\Tomás Coelho\Desktop\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucHome.resources
 C:\Users\Tomás Coelho\Desktop\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucSessoes.resources
 C:\Users\Tomás Coelho\Desktop\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucAdmin.resources
+C:\Users\artur\OneDrive\Ambiente de Trabalho\Escola\Projetos\Desenvolvimento de Aplicações\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucAdmin.resources
+C:\Users\artur\OneDrive\Ambiente de Trabalho\Escola\Projetos\Desenvolvimento de Aplicações\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucAtendimento.resources
+C:\Users\artur\OneDrive\Ambiente de Trabalho\Escola\Projetos\Desenvolvimento de Aplicações\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucCinema.resources
+C:\Users\artur\OneDrive\Ambiente de Trabalho\Escola\Projetos\Desenvolvimento de Aplicações\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucClientes.resources
+C:\Users\artur\OneDrive\Ambiente de Trabalho\Escola\Projetos\Desenvolvimento de Aplicações\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucFilmes.resources
+C:\Users\artur\OneDrive\Ambiente de Trabalho\Escola\Projetos\Desenvolvimento de Aplicações\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucHome.resources
+C:\Users\artur\OneDrive\Ambiente de Trabalho\Escola\Projetos\Desenvolvimento de Aplicações\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucSessoes.resources
