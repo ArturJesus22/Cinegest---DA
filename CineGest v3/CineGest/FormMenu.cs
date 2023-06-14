@@ -115,6 +115,11 @@ namespace WindowsFormsApp1
             ucClientes uc = new ucClientes();
             adicionarUserControl(uc);
         }
+
+        private void lblUpperMenu_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

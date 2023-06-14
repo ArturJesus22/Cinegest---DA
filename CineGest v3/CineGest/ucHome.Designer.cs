@@ -39,9 +39,10 @@
             // 
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.lblWelcome.Location = new System.Drawing.Point(437, 47);
+            this.lblWelcome.Location = new System.Drawing.Point(328, 38);
+            this.lblWelcome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(149, 32);
+            this.lblWelcome.Size = new System.Drawing.Size(114, 24);
             this.lblWelcome.TabIndex = 0;
             this.lblWelcome.Text = "Bem vindo,";
             // 
@@ -50,9 +51,10 @@
             this.txtUsername.AutoSize = true;
             this.txtUsername.Font = new System.Drawing.Font("Arial", 15.75F);
             this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(185)))), ((int)(((byte)(221)))));
-            this.txtUsername.Location = new System.Drawing.Point(460, 97);
+            this.txtUsername.Location = new System.Drawing.Point(345, 79);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(93, 32);
+            this.txtUsername.Size = new System.Drawing.Size(71, 24);
             this.txtUsername.TabIndex = 1;
             this.txtUsername.Text = "{user}!";
             // 
@@ -60,19 +62,20 @@
             // 
             this.txtTipoUser.AutoSize = true;
             this.txtTipoUser.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTipoUser.Location = new System.Drawing.Point(459, 140);
+            this.txtTipoUser.Location = new System.Drawing.Point(344, 114);
+            this.txtTipoUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtTipoUser.Name = "txtTipoUser";
-            this.txtTipoUser.Size = new System.Drawing.Size(94, 23);
+            this.txtTipoUser.Size = new System.Drawing.Size(74, 18);
             this.txtTipoUser.TabIndex = 2;
             this.txtTipoUser.Text = "{tipouser}";
             // 
             // lbSessoes
             // 
             this.lbSessoes.FormattingEnabled = true;
-            this.lbSessoes.ItemHeight = 16;
-            this.lbSessoes.Location = new System.Drawing.Point(120, 212);
+            this.lbSessoes.Location = new System.Drawing.Point(90, 172);
+            this.lbSessoes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lbSessoes.Name = "lbSessoes";
-            this.lbSessoes.Size = new System.Drawing.Size(522, 372);
+            this.lbSessoes.Size = new System.Drawing.Size(392, 303);
             this.lbSessoes.TabIndex = 3;
             // 
             // btnAdicionarBilhete
@@ -81,16 +84,17 @@
             this.btnAdicionarBilhete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(185)))), ((int)(((byte)(221)))));
             this.btnAdicionarBilhete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdicionarBilhete.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.btnAdicionarBilhete.Location = new System.Drawing.Point(694, 335);
+            this.btnAdicionarBilhete.Location = new System.Drawing.Point(520, 272);
+            this.btnAdicionarBilhete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdicionarBilhete.Name = "btnAdicionarBilhete";
-            this.btnAdicionarBilhete.Size = new System.Drawing.Size(191, 93);
+            this.btnAdicionarBilhete.Size = new System.Drawing.Size(143, 76);
             this.btnAdicionarBilhete.TabIndex = 4;
             this.btnAdicionarBilhete.Text = "ADICIONAR BILHETE";
             this.btnAdicionarBilhete.UseVisualStyleBackColor = false;
             // 
             // ucHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.Controls.Add(this.btnAdicionarBilhete);
@@ -98,8 +102,9 @@
             this.Controls.Add(this.txtTipoUser);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.lblWelcome);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ucHome";
-            this.Size = new System.Drawing.Size(1031, 696);
+            this.Size = new System.Drawing.Size(773, 566);
             this.ResumeLayout(false);
             this.PerformLayout();
 

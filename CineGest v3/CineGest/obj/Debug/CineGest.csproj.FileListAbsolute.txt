@@ -36,3 +36,22 @@ C:\Users\artur\OneDrive\Ambiente de Trabalho\Escola\Projetos\Desenvolvimento de 
 C:\Users\artur\OneDrive\Ambiente de Trabalho\Escola\Projetos\Desenvolvimento de Aplicações\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucFilmes.resources
 C:\Users\artur\OneDrive\Ambiente de Trabalho\Escola\Projetos\Desenvolvimento de Aplicações\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucHome.resources
 C:\Users\artur\OneDrive\Ambiente de Trabalho\Escola\Projetos\Desenvolvimento de Aplicações\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucSessoes.resources
+C:\Users\Tomás Coelho\Documents\GitHub\PSI_DA_PL2-F\CineGest v3\CineGest\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\Tomás Coelho\Documents\GitHub\PSI_DA_PL2-F\CineGest v3\CineGest\bin\Debug\WindowsFormsApp1.exe
+C:\Users\Tomás Coelho\Documents\GitHub\PSI_DA_PL2-F\CineGest v3\CineGest\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\Tomás Coelho\Documents\GitHub\PSI_DA_PL2-F\CineGest v3\CineGest\obj\Debug\CineGest.csproj.AssemblyReference.cache
+C:\Users\Tomás Coelho\Documents\GitHub\PSI_DA_PL2-F\CineGest v3\CineGest\obj\Debug\CineGest.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tomás Coelho\Documents\GitHub\PSI_DA_PL2-F\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.FormLogin.resources
+C:\Users\Tomás Coelho\Documents\GitHub\PSI_DA_PL2-F\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.FormMenu.resources
+C:\Users\Tomás Coelho\Documents\GitHub\PSI_DA_PL2-F\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\Tomás Coelho\Documents\GitHub\PSI_DA_PL2-F\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucAdmin.resources
+C:\Users\Tomás Coelho\Documents\GitHub\PSI_DA_PL2-F\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucAtendimento.resources
+C:\Users\Tomás Coelho\Documents\GitHub\PSI_DA_PL2-F\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucCinema.resources
+C:\Users\Tomás Coelho\Documents\GitHub\PSI_DA_PL2-F\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucClientes.resources
+C:\Users\Tomás Coelho\Documents\GitHub\PSI_DA_PL2-F\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucFilmes.resources
+C:\Users\Tomás Coelho\Documents\GitHub\PSI_DA_PL2-F\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucHome.resources
+C:\Users\Tomás Coelho\Documents\GitHub\PSI_DA_PL2-F\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucSessoes.resources
+C:\Users\Tomás Coelho\Documents\GitHub\PSI_DA_PL2-F\CineGest v3\CineGest\obj\Debug\CineGest.csproj.GenerateResource.cache
+C:\Users\Tomás Coelho\Documents\GitHub\PSI_DA_PL2-F\CineGest v3\CineGest\obj\Debug\CineGest.csproj.CoreCompileInputs.cache
+C:\Users\Tomás Coelho\Documents\GitHub\PSI_DA_PL2-F\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.exe
+C:\Users\Tomás Coelho\Documents\GitHub\PSI_DA_PL2-F\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.pdb
