@@ -38,7 +38,7 @@
             this.lblCriarNomeFilme = new System.Windows.Forms.Label();
             this.gbAlterarFilmes = new System.Windows.Forms.GroupBox();
             this.lblAlterarEstadoFilme = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxAlterarFilmes = new System.Windows.Forms.ComboBox();
             this.cbAlterarFilmeAtivo = new System.Windows.Forms.CheckBox();
             this.lblAlterarCategoriaFilme = new System.Windows.Forms.Label();
             this.cbListaFilmesCriados = new System.Windows.Forms.ComboBox();
@@ -92,6 +92,7 @@
             this.cbCriarFilmeAtivo.TabIndex = 8;
             this.cbCriarFilmeAtivo.Text = "Ativo";
             this.cbCriarFilmeAtivo.UseVisualStyleBackColor = true;
+            this.cbCriarFilmeAtivo.CheckedChanged += new System.EventHandler(this.cbCriarFilmeAtivo_CheckedChanged);
             // 
             // comboBoxFilmes
             // 
@@ -100,6 +101,7 @@
             this.comboBoxFilmes.Name = "comboBoxFilmes";
             this.comboBoxFilmes.Size = new System.Drawing.Size(121, 21);
             this.comboBoxFilmes.TabIndex = 7;
+            this.comboBoxFilmes.SelectedIndexChanged += new System.EventHandler(this.comboBoxFilmes_SelectedIndexChanged);
             // 
             // btnAdicionarFilme
             // 
@@ -140,7 +142,7 @@
             // 
             this.gbAlterarFilmes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.gbAlterarFilmes.Controls.Add(this.lblAlterarEstadoFilme);
-            this.gbAlterarFilmes.Controls.Add(this.comboBox1);
+            this.gbAlterarFilmes.Controls.Add(this.comboBoxAlterarFilmes);
             this.gbAlterarFilmes.Controls.Add(this.cbAlterarFilmeAtivo);
             this.gbAlterarFilmes.Controls.Add(this.lblAlterarCategoriaFilme);
             this.gbAlterarFilmes.Controls.Add(this.cbListaFilmesCriados);
@@ -163,13 +165,14 @@
             this.lblAlterarEstadoFilme.TabIndex = 11;
             this.lblAlterarEstadoFilme.Text = "Estado:";
             // 
-            // comboBox1
+            // comboBoxAlterarFilmes
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(137, 86);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 11;
+            this.comboBoxAlterarFilmes.FormattingEnabled = true;
+            this.comboBoxAlterarFilmes.Location = new System.Drawing.Point(137, 86);
+            this.comboBoxAlterarFilmes.Name = "comboBoxAlterarFilmes";
+            this.comboBoxAlterarFilmes.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxAlterarFilmes.TabIndex = 11;
+            this.comboBoxAlterarFilmes.SelectedIndexChanged += new System.EventHandler(this.comboBoxAlterarFilmes_SelectedIndexChanged);
             // 
             // cbAlterarFilmeAtivo
             // 
@@ -181,6 +184,7 @@
             this.cbAlterarFilmeAtivo.TabIndex = 9;
             this.cbAlterarFilmeAtivo.Text = "Ativo";
             this.cbAlterarFilmeAtivo.UseVisualStyleBackColor = true;
+            this.cbAlterarFilmeAtivo.CheckedChanged += new System.EventHandler(this.cbAlterarFilmeAtivo_CheckedChanged);
             // 
             // lblAlterarCategoriaFilme
             // 
@@ -258,7 +262,7 @@
         private System.Windows.Forms.TextBox txtAdicionarNomeFilme;
         private System.Windows.Forms.Label lblCriarEstadoFilme;
         private System.Windows.Forms.Label lblAlterarEstadoFilme;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxAlterarFilmes;
         private System.Windows.Forms.Label lblAlterarCategoriaFilme;
     }
 }

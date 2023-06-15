@@ -26,19 +26,19 @@ namespace WindowsFormsApp1
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-            txtPassword.UseSystemPasswordChar = true;
+            txtPassword.PasswordChar = '\u25CF';
         }
 
         private void imgOlho_Click(object sender, EventArgs e)
         {
-            txtPassword.UseSystemPasswordChar = false;
+            txtPassword.PasswordChar = '\0';
             imgOlho.Visible = false;
             picture_esconderpass.Visible = true;
         }
 
         private void picture_esconderpass_Click(object sender, EventArgs e)
         {
-            txtPassword.UseSystemPasswordChar = true;
+            txtPassword.PasswordChar = '\u25CF';
             imgOlho.Visible = true;
             picture_esconderpass.Visible = false;
         }
@@ -80,7 +80,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                MessageBox.Show("Invalid User");
+                MessageBox.Show("Utilizador Inválido");
             }
         }
 

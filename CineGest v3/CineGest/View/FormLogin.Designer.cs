@@ -117,12 +117,16 @@
             // 
             // btnSairLogin
             // 
-            this.btnSairLogin.Location = new System.Drawing.Point(873, 397);
+            this.btnSairLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(185)))), ((int)(((byte)(221)))));
+            this.btnSairLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSairLogin.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.btnSairLogin.ForeColor = System.Drawing.Color.White;
+            this.btnSairLogin.Location = new System.Drawing.Point(873, 393);
             this.btnSairLogin.Name = "btnSairLogin";
-            this.btnSairLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnSairLogin.Size = new System.Drawing.Size(75, 31);
             this.btnSairLogin.TabIndex = 21;
             this.btnSairLogin.Text = "Sair";
-            this.btnSairLogin.UseVisualStyleBackColor = true;
+            this.btnSairLogin.UseVisualStyleBackColor = false;
             this.btnSairLogin.Click += new System.EventHandler(this.btnSairLogin_Click);
             // 
             // label1
@@ -139,14 +143,17 @@
             // 
             // btnEntrar
             // 
+            this.btnEntrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(185)))), ((int)(((byte)(221)))));
+            this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEntrar.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.btnEntrar.ForeColor = System.Drawing.Color.White;
             this.btnEntrar.Location = new System.Drawing.Point(714, 322);
             this.btnEntrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(234, 46);
             this.btnEntrar.TabIndex = 24;
-            this.btnEntrar.Text = "Continuar >";
-            this.btnEntrar.UseVisualStyleBackColor = true;
+            this.btnEntrar.Text = "Continuar ➜";
+            this.btnEntrar.UseVisualStyleBackColor = false;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // lblUser
