@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -102,5 +103,40 @@ namespace WindowsFormsApp1.Controller
             Application.Run(new FormSessoes());
         }
 
+        public void mostrarOpcoesSaida(PictureBox pbSair)
+        {
+            ContextMenuStrip menu = new ContextMenuStrip();
+
+            ToolStripMenuItem itemAlterarUser = new ToolStripMenuItem("Alterar Utilizador");
+            itemAlterarUser.Click += tsAlterarUser_Click;
+            menu.Items.Add(itemAlterarUser);
+
+            ToolStripMenuItem itemSair = new ToolStripMenuItem("Sair");
+            itemSair.Click += tsSair_Click;
+            menu.Items.Add(itemSair);
+
+            menu.Show(pbSair, 0, pbSair.Height);
+        }
+
+        private void tsAlterarUser_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Tem a certeza que deseja alterar o utilizador?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Restart();
+                Environment.Exit(0);
+            }
+        }
+
+        private void tsSair_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("Tem a certeza que deseja sair?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

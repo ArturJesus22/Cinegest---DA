@@ -87,15 +87,9 @@ namespace WindowsFormsApp1
             mainController.initFormAdmin();
         }
 
-        //Botão de Exit
         private void pbSair_Click(object sender, EventArgs e)
         {
-            DialogResult resultado = MessageBox.Show("Tem a certeza que deseja sair?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (resultado == DialogResult.Yes)
-            {
-                this.Close();
-            }
+            mainController.mostrarOpcoesSaida(pbSair);
         }
 
 
