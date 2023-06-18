@@ -499,6 +499,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(29)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(1027, 564);
+            this.ControlBox = false;
             this.Controls.Add(this.pbGestao);
             this.Controls.Add(this.lblgestao);
             this.Controls.Add(this.label1);
@@ -520,8 +521,10 @@
             this.Controls.Add(this.lblAtendimento);
             this.Controls.Add(this.lblDashboard);
             this.Controls.Add(this.lblMenuMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormFilmes";
-            this.Text = "FormFilmes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cinegest - Filmes";
             this.Load += new System.EventHandler(this.FormFilmes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbGestao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSair)).EndInit();

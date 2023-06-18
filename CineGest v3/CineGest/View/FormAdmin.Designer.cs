@@ -429,6 +429,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(29)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(1027, 564);
+            this.ControlBox = false;
             this.Controls.Add(this.pbGestao);
             this.Controls.Add(this.lblgestao);
             this.Controls.Add(this.label1);
@@ -453,7 +454,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormAdmin";
+            this.Text = "Cinegest - AdminPanel";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.FormAdmin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbSair)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbClientes)).EndInit();

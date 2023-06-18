@@ -118,6 +118,7 @@ namespace WindowsFormsApp1.View
             this.pbSair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbSair.TabIndex = 72;
             this.pbSair.TabStop = false;
+            this.pbSair.Click += new System.EventHandler(this.pbSair_Click);
             // 
             // pbClientes
             // 
@@ -412,6 +413,7 @@ namespace WindowsFormsApp1.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(29)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(1027, 564);
+            this.ControlBox = false;
             this.Controls.Add(this.pbGestao);
             this.Controls.Add(this.lblgestao);
             this.Controls.Add(this.label1);
@@ -433,8 +435,10 @@ namespace WindowsFormsApp1.View
             this.Controls.Add(this.lblAtendimento);
             this.Controls.Add(this.lblDashboard);
             this.Controls.Add(this.lblMenuMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormSessoes";
-            this.Text = "FormSessoes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cinegest - Sessões";
             this.Load += new System.EventHandler(this.FormSessoes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbGestao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSair)).EndInit();

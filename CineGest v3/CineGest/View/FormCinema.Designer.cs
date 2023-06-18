@@ -423,6 +423,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(29)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(1027, 564);
+            this.ControlBox = false;
             this.Controls.Add(this.pbGestao);
             this.Controls.Add(this.lblgestao);
             this.Controls.Add(this.label1);
@@ -444,8 +445,10 @@
             this.Controls.Add(this.lblAtendimento);
             this.Controls.Add(this.lblDashboard);
             this.Controls.Add(this.lblMenuMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormCinema";
-            this.Text = "FormCinema";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cinegest - Cinema";
             this.Load += new System.EventHandler(this.FormCinema_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbGestao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSair)).EndInit();
