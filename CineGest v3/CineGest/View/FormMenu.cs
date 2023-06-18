@@ -8,80 +8,86 @@ using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
+using WindowsFormsApp1.Model;
 using System.Windows.Forms;
 using static System.Windows.Forms.AxHost;
-
+using System.Threading;
+using WindowsFormsApp1.View;
+using WindowsFormsApp1.Controller;
 
 namespace WindowsFormsApp1
 {
     public partial class FormMenu : Form
     {
-        private System.Windows.Forms.Label lblSelecionada;
+        private MainController mainController;
+
         public FormMenu()
         {
             InitializeComponent();
-            ucHome uc = new ucHome();
-            adicionarUserControl(uc);
+            mainController = new MainController();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            string diaDaSemana = DateTime.Now.ToString("dddd, dd MMMM yyyy");
-            string data = diaDaSemana;
-            lb_data.Text = data;
-        }
-        private void adicionarUserControl(UserControl userControl)
-        {
-            userControl.Dock = DockStyle.Fill;
-            painelContentor.Controls.Clear();
-            painelContentor.Controls.Add(userControl);
-            userControl.BringToFront();
-        }
+            string dia = DateTime.Now.ToString("dddd, dd MMMM yyyy");
+            lb_data.Text = dia;
+            string permissao = DBConnection.permissaoUsuario;
+            string username = FormLogin.username_global;
 
-        private void lblDashboard_Click(object sender, EventArgs e)
-        {
-            ucHome uc = new ucHome();
-            adicionarUserControl(uc);
+            txtUsername.Text = username;
+
+            if (permissao == "1")
+            {
+                lblgestao.Visible = false;
+                pbGestao.Visible = false;
+                txtTipoUser.Text = "Funcionário";
+            }
+            else if (permissao == "2")
+            {
+                lblgestao.Visible = true;
+                pbGestao.Visible = true;
+                txtTipoUser.Text = "Administrador";
+            } 
+            
         }
+    
         private void lblAtendimento_Click(object sender, EventArgs e)
         {
-            ucAtendimento uc = new ucAtendimento();
-            adicionarUserControl(uc);
+            this.Close();
+            mainController.initFormAtendimento();
+        }
+
+        private void labelSessoes_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            mainController.initFormSessoes();
         }
 
         private void lblCinema_Click(object sender, EventArgs e)
         {
-            ucCinema uc = new ucCinema();
-            adicionarUserControl(uc);
+            this.Close();
+            mainController.initFormCinema();
         }
+
         private void lblFilmes_Click(object sender, EventArgs e)
         {
-            ucFilmes uc = new ucFilmes();
-            adicionarUserControl(uc);
+            this.Close();
+            mainController.initFormFilmes();
         }
-        private void lblSessoes_Click(object sender, EventArgs e)
-        {
-            ucSessoes uc = new ucSessoes();
-            adicionarUserControl(uc);
-        }
+
         private void lblClientes_Click(object sender, EventArgs e)
         {
-            ucClientes uc = new ucClientes();
-            adicionarUserControl(uc);
+            this.Close();
+            mainController.initFormCliente();
+
         }
 
-        private void Label_Click(object sender, EventArgs e)
+        public void lblgestao_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.Label lblClick = (System.Windows.Forms.Label)sender;
-
-            if (lblSelecionada != null)
-            {
-                lblSelecionada.Font = new Font(lblSelecionada.Font, lblSelecionada.Font.Style & ~FontStyle.Bold);
-            }
-
-            lblClick.Font = new Font(lblClick.Font, lblClick.Font.Style | FontStyle.Bold);
-            lblSelecionada = lblClick;
+            this.Close();
+            mainController.initFormAdmin();
         }
 
+        //Botão de Exit
         private void pbSair_Click(object sender, EventArgs e)
         {
             DialogResult resultado = MessageBox.Show("Tem a certeza que deseja sair?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -92,34 +98,14 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void pbCinema_Click(object sender, EventArgs e)
-        {
-            ucCinema uc = new ucCinema();
-            adicionarUserControl(uc);
-        }
 
-        private void pbFilmes_Click(object sender, EventArgs e)
-        {
-            ucFilmes uc = new ucFilmes();
-            adicionarUserControl(uc);
-        }
-
-        private void pbSessoes_Click(object sender, EventArgs e)
-        {   
-            ucSessoes uc = new ucSessoes();
-            adicionarUserControl(uc);
-        }
-
-        private void pbClientes_Click(object sender, EventArgs e)
-        {
-            ucClientes uc = new ucClientes();
-            adicionarUserControl(uc);
-        }
-
-        private void lblUpperMenu_Click(object sender, EventArgs e)
+        private void btnAdicionarBilhete_Click(object sender, EventArgs e)
         {
 
         }
+
     }
 }
+
+
 

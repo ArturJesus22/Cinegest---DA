@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\Admin.cs" />
     <Compile Include="Controller\Bilhete.cs" />
     <Compile Include="Controller\Categoria.cs" />
     <Compile Include="Controller\Cinema.cs" />
@@ -71,6 +72,36 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="View\FormAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormAdmin.Designer.cs">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormAtendimento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormAtendimento.Designer.cs">
+      <DependentUpon>FormAtendimento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormCinema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormCinema.Designer.cs">
+      <DependentUpon>FormCinema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormCliente.Designer.cs">
+      <DependentUpon>FormCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormFilmes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormFilmes.Designer.cs">
+      <DependentUpon>FormFilmes.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,48 +119,27 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controller\Sala.cs" />
     <Compile Include="Controller\Sessao.cs" />
-    <Compile Include="View\ucAdmin.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="View\FormSessoes.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ucAdmin.Designer.cs">
-      <DependentUpon>ucAdmin.cs</DependentUpon>
+    <Compile Include="View\FormSessoes.Designer.cs">
+      <DependentUpon>FormSessoes.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ucAtendimento.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\ucAtendimento.Designer.cs">
-      <DependentUpon>ucAtendimento.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\ucCinema.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\ucCinema.Designer.cs">
-      <DependentUpon>ucCinema.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\ucClientes.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\ucClientes.Designer.cs">
-      <DependentUpon>ucClientes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\ucFilmes.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\ucFilmes.Designer.cs">
-      <DependentUpon>ucFilmes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\ucHome.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\ucHome.Designer.cs">
-      <DependentUpon>ucHome.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\ucSessoes.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\ucSessoes.Designer.cs">
-      <DependentUpon>ucSessoes.cs</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="View\FormAdmin.resx">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormAtendimento.resx">
+      <DependentUpon>FormAtendimento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormCinema.resx">
+      <DependentUpon>FormCinema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormCliente.resx">
+      <DependentUpon>FormCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormFilmes.resx">
+      <DependentUpon>FormFilmes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,26 +155,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\ucAdmin.resx">
-      <DependentUpon>ucAdmin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\ucAtendimento.resx">
-      <DependentUpon>ucAtendimento.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\ucCinema.resx">
-      <DependentUpon>ucCinema.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\ucClientes.resx">
-      <DependentUpon>ucClientes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\ucFilmes.resx">
-      <DependentUpon>ucFilmes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\ucHome.resx">
-      <DependentUpon>ucHome.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\ucSessoes.resx">
-      <DependentUpon>ucSessoes.cs</DependentUpon>
+    <EmbeddedResource Include="View\FormSessoes.resx">
+      <DependentUpon>FormSessoes.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

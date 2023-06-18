@@ -1,4 +1,6 @@
-﻿namespace WindowsFormsApp1
+﻿using System;
+
+namespace WindowsFormsApp1
 {
     partial class FormMenu
     {
@@ -30,6 +32,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
             this.painelContentor = new System.Windows.Forms.Panel();
+            this.lblSessoesHoje = new System.Windows.Forms.Label();
+            this.lbSessoes = new System.Windows.Forms.ListBox();
+            this.btnAdicionarBilhete = new System.Windows.Forms.Button();
+            this.lblWelcome = new System.Windows.Forms.Label();
+            this.txtUsername = new System.Windows.Forms.Label();
+            this.txtTipoUser = new System.Windows.Forms.Label();
             this.lblUpperMenu = new System.Windows.Forms.Label();
             this.lblClientes = new System.Windows.Forms.Label();
             this.lblSessoes = new System.Windows.Forms.Label();
@@ -48,6 +56,10 @@
             this.pbClientes = new System.Windows.Forms.PictureBox();
             this.pbSair = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pbGestao = new System.Windows.Forms.PictureBox();
+            this.lblgestao = new System.Windows.Forms.Label();
+            this.labelSessoes = new System.Windows.Forms.Label();
+            this.painelContentor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogoMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDashboard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAtendimento)).BeginInit();
@@ -56,14 +68,91 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbCinema)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSair)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGestao)).BeginInit();
             this.SuspendLayout();
             // 
             // painelContentor
             // 
+            this.painelContentor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.painelContentor.Controls.Add(this.lblSessoesHoje);
+            this.painelContentor.Controls.Add(this.lbSessoes);
+            this.painelContentor.Controls.Add(this.btnAdicionarBilhete);
+            this.painelContentor.Controls.Add(this.lblWelcome);
+            this.painelContentor.Controls.Add(this.txtUsername);
+            this.painelContentor.Controls.Add(this.txtTipoUser);
             this.painelContentor.Location = new System.Drawing.Point(246, 30);
             this.painelContentor.Name = "painelContentor";
             this.painelContentor.Size = new System.Drawing.Size(782, 537);
             this.painelContentor.TabIndex = 21;
+            // 
+            // lblSessoesHoje
+            // 
+            this.lblSessoesHoje.AutoSize = true;
+            this.lblSessoesHoje.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.lblSessoesHoje.Location = new System.Drawing.Point(88, 138);
+            this.lblSessoesHoje.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSessoesHoje.Name = "lblSessoesHoje";
+            this.lblSessoesHoje.Size = new System.Drawing.Size(195, 24);
+            this.lblSessoesHoje.TabIndex = 39;
+            this.lblSessoesHoje.Text = "Sessões para Hoje:";
+            // 
+            // lbSessoes
+            // 
+            this.lbSessoes.FormattingEnabled = true;
+            this.lbSessoes.Location = new System.Drawing.Point(92, 164);
+            this.lbSessoes.Margin = new System.Windows.Forms.Padding(2);
+            this.lbSessoes.Name = "lbSessoes";
+            this.lbSessoes.Size = new System.Drawing.Size(392, 303);
+            this.lbSessoes.TabIndex = 37;
+            // 
+            // btnAdicionarBilhete
+            // 
+            this.btnAdicionarBilhete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(185)))), ((int)(((byte)(221)))));
+            this.btnAdicionarBilhete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(185)))), ((int)(((byte)(221)))));
+            this.btnAdicionarBilhete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdicionarBilhete.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.btnAdicionarBilhete.Location = new System.Drawing.Point(522, 264);
+            this.btnAdicionarBilhete.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAdicionarBilhete.Name = "btnAdicionarBilhete";
+            this.btnAdicionarBilhete.Size = new System.Drawing.Size(143, 76);
+            this.btnAdicionarBilhete.TabIndex = 38;
+            this.btnAdicionarBilhete.Text = "ADICIONAR BILHETE";
+            this.btnAdicionarBilhete.UseVisualStyleBackColor = false;
+            this.btnAdicionarBilhete.Click += new System.EventHandler(this.btnAdicionarBilhete_Click);
+            // 
+            // lblWelcome
+            // 
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.lblWelcome.Location = new System.Drawing.Point(330, 30);
+            this.lblWelcome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(114, 24);
+            this.lblWelcome.TabIndex = 34;
+            this.lblWelcome.Text = "Bem vindo,";
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.AutoSize = true;
+            this.txtUsername.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(185)))), ((int)(((byte)(221)))));
+            this.txtUsername.Location = new System.Drawing.Point(347, 71);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(71, 24);
+            this.txtUsername.TabIndex = 35;
+            this.txtUsername.Text = "{user}!";
+            // 
+            // txtTipoUser
+            // 
+            this.txtTipoUser.AutoSize = true;
+            this.txtTipoUser.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTipoUser.Location = new System.Drawing.Point(328, 106);
+            this.txtTipoUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.txtTipoUser.Name = "txtTipoUser";
+            this.txtTipoUser.Size = new System.Drawing.Size(74, 18);
+            this.txtTipoUser.TabIndex = 36;
+            this.txtTipoUser.Text = "{tipouser}";
             // 
             // lblUpperMenu
             // 
@@ -72,7 +161,6 @@
             this.lblUpperMenu.Name = "lblUpperMenu";
             this.lblUpperMenu.Size = new System.Drawing.Size(782, 31);
             this.lblUpperMenu.TabIndex = 20;
-            this.lblUpperMenu.Click += new System.EventHandler(this.lblUpperMenu_Click);
             // 
             // lblClientes
             // 
@@ -88,15 +176,10 @@
             // 
             // lblSessoes
             // 
-            this.lblSessoes.AutoSize = true;
-            this.lblSessoes.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSessoes.ForeColor = System.Drawing.Color.White;
-            this.lblSessoes.Location = new System.Drawing.Point(86, 232);
+            this.lblSessoes.Location = new System.Drawing.Point(0, 0);
             this.lblSessoes.Name = "lblSessoes";
-            this.lblSessoes.Size = new System.Drawing.Size(93, 24);
-            this.lblSessoes.TabIndex = 18;
-            this.lblSessoes.Text = "Sessões";
-            this.lblSessoes.Click += new System.EventHandler(this.lblSessoes_Click);
+            this.lblSessoes.Size = new System.Drawing.Size(100, 23);
+            this.lblSessoes.TabIndex = 34;
             // 
             // lblFilmes
             // 
@@ -108,7 +191,7 @@
             this.lblFilmes.Size = new System.Drawing.Size(71, 24);
             this.lblFilmes.TabIndex = 17;
             this.lblFilmes.Text = "Filmes";
-            this.lblFilmes.Click += new System.EventHandler(this.pbFilmes_Click);
+            this.lblFilmes.Click += new System.EventHandler(this.lblFilmes_Click);
             // 
             // lblCinema
             // 
@@ -137,14 +220,13 @@
             // lblDashboard
             // 
             this.lblDashboard.AutoSize = true;
-            this.lblDashboard.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDashboard.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDashboard.ForeColor = System.Drawing.Color.White;
-            this.lblDashboard.Location = new System.Drawing.Point(85, 190);
+            this.lblDashboard.Location = new System.Drawing.Point(87, 194);
             this.lblDashboard.Name = "lblDashboard";
             this.lblDashboard.Size = new System.Drawing.Size(112, 24);
             this.lblDashboard.TabIndex = 14;
             this.lblDashboard.Text = "Dashboard";
-            this.lblDashboard.Click += new System.EventHandler(this.lblDashboard_Click);
             // 
             // lblMenuMenu
             // 
@@ -198,6 +280,7 @@
             this.pbAtendimento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbAtendimento.TabIndex = 25;
             this.pbAtendimento.TabStop = false;
+            this.pbAtendimento.Click += new System.EventHandler(this.lblAtendimento_Click);
             // 
             // pbSessoes
             // 
@@ -209,7 +292,7 @@
             this.pbSessoes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbSessoes.TabIndex = 26;
             this.pbSessoes.TabStop = false;
-            this.pbSessoes.Click += new System.EventHandler(this.pbSessoes_Click);
+            this.pbSessoes.Click += new System.EventHandler(this.labelSessoes_Click);
             // 
             // pbFilmes
             // 
@@ -221,7 +304,7 @@
             this.pbFilmes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbFilmes.TabIndex = 27;
             this.pbFilmes.TabStop = false;
-            this.pbFilmes.Click += new System.EventHandler(this.pbFilmes_Click);
+            this.pbFilmes.Click += new System.EventHandler(this.lblFilmes_Click);
             // 
             // pbCinema
             // 
@@ -233,7 +316,7 @@
             this.pbCinema.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCinema.TabIndex = 28;
             this.pbCinema.TabStop = false;
-            this.pbCinema.Click += new System.EventHandler(this.pbCinema_Click);
+            this.pbCinema.Click += new System.EventHandler(this.lblCinema_Click);
             // 
             // pbClientes
             // 
@@ -245,7 +328,7 @@
             this.pbClientes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbClientes.TabIndex = 29;
             this.pbClientes.TabStop = false;
-            this.pbClientes.Click += new System.EventHandler(this.pbClientes_Click);
+            this.pbClientes.Click += new System.EventHandler(this.lblClientes_Click);
             // 
             // pbSair
             // 
@@ -267,12 +350,53 @@
             this.label1.Size = new System.Drawing.Size(1, 567);
             this.label1.TabIndex = 31;
             // 
+            // pbGestao
+            // 
+            this.pbGestao.Image = ((System.Drawing.Image)(resources.GetObject("pbGestao.Image")));
+            this.pbGestao.Location = new System.Drawing.Point(47, 459);
+            this.pbGestao.Margin = new System.Windows.Forms.Padding(2);
+            this.pbGestao.Name = "pbGestao";
+            this.pbGestao.Size = new System.Drawing.Size(33, 38);
+            this.pbGestao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbGestao.TabIndex = 33;
+            this.pbGestao.TabStop = false;
+            this.pbGestao.Visible = false;
+            this.pbGestao.Click += new System.EventHandler(this.lblgestao_Click);
+            // 
+            // lblgestao
+            // 
+            this.lblgestao.AutoSize = true;
+            this.lblgestao.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblgestao.ForeColor = System.Drawing.Color.White;
+            this.lblgestao.Location = new System.Drawing.Point(87, 463);
+            this.lblgestao.Name = "lblgestao";
+            this.lblgestao.Size = new System.Drawing.Size(79, 24);
+            this.lblgestao.TabIndex = 32;
+            this.lblgestao.Text = "Gestão";
+            this.lblgestao.Visible = false;
+            this.lblgestao.Click += new System.EventHandler(this.lblgestao_Click);
+            // 
+            // labelSessoes
+            // 
+            this.labelSessoes.AutoSize = true;
+            this.labelSessoes.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSessoes.ForeColor = System.Drawing.Color.White;
+            this.labelSessoes.Location = new System.Drawing.Point(87, 234);
+            this.labelSessoes.Name = "labelSessoes";
+            this.labelSessoes.Size = new System.Drawing.Size(93, 24);
+            this.labelSessoes.TabIndex = 60;
+            this.labelSessoes.Text = "Sessões";
+            this.labelSessoes.Click += new System.EventHandler(this.labelSessoes_Click);
+            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(29)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(1027, 564);
+            this.Controls.Add(this.labelSessoes);
+            this.Controls.Add(this.pbGestao);
+            this.Controls.Add(this.lblgestao);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbSair);
             this.Controls.Add(this.pbClientes);
@@ -292,9 +416,14 @@
             this.Controls.Add(this.lblAtendimento);
             this.Controls.Add(this.lblDashboard);
             this.Controls.Add(this.lblMenuMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cinema";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.painelContentor.ResumeLayout(false);
+            this.painelContentor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogoMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDashboard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAtendimento)).EndInit();
@@ -303,6 +432,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbCinema)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSair)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGestao)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -329,6 +459,15 @@
         private System.Windows.Forms.PictureBox pbAtendimento;
         private System.Windows.Forms.PictureBox pbSair;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pbGestao;
+        private System.Windows.Forms.Label lblgestao;
+        private System.Windows.Forms.Label lblSessoesHoje;
+        private System.Windows.Forms.ListBox lbSessoes;
+        private System.Windows.Forms.Button btnAdicionarBilhete;
+        private System.Windows.Forms.Label lblWelcome;
+        private System.Windows.Forms.Label txtUsername;
+        private System.Windows.Forms.Label txtTipoUser;
+        private System.Windows.Forms.Label labelSessoes;
     }
 }
 

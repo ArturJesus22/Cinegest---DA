@@ -197,7 +197,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(29)))), ((int)(((byte)(54)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1043, 603);
+            this.ClientSize = new System.Drawing.Size(1007, 603);
             this.ControlBox = false;
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUser);

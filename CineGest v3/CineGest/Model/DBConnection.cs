@@ -7,13 +7,17 @@ using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Windows.Forms;
 using System.Drawing.Text;
+using System.Data;
 
 namespace WindowsFormsApp1.Model
-{
+{    
     public class DBConnection : FormLogin
     {
+        public static string permissaoUsuario;
+
         SqlConnection con = new SqlConnection();
-        public bool DBConnect(string username, string password)
+
+        public bool DBConnect(string username, string password, out string permissao)
         {
             try
             {
@@ -28,15 +32,27 @@ namespace WindowsFormsApp1.Model
                     cmd.Parameters.AddWithValue("@username", username);
 
                     int count = (int)cmd.ExecuteScalar();
-                    return count > 0;
+
+                    if (count > 0)
+                    {
+                        sql = "SELECT Permissoes FROM Login WHERE Utilizador = @username";
+                        cmd = new SqlCommand(sql, conn);
+                        cmd.Parameters.AddWithValue("@username", username);
+                        permissao = cmd.ExecuteScalar()?.ToString();
+                        permissaoUsuario = permissao;
+                        return true;
+                    }
                 }
             }
             catch (Exception e)
             {
                 MessageBox.Show("An error occurred: " + e.Message);
-                return false;
             }
+
+            permissao = null;
+            return false;
         }
+
 
     }
 }

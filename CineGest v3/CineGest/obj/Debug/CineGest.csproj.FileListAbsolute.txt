@@ -22,13 +22,6 @@ C:\Users\Tomás Coelho\Desktop\CineGest v3\CineGest\obj\Debug\CineGest.csproj.Ge
 C:\Users\Tomás Coelho\Desktop\CineGest v3\CineGest\obj\Debug\CineGest.csproj.CoreCompileInputs.cache
 C:\Users\Tomás Coelho\Desktop\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.exe
 C:\Users\Tomás Coelho\Desktop\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.pdb
-C:\Users\Tomás Coelho\Desktop\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucAtendimento.resources
-C:\Users\Tomás Coelho\Desktop\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucCinema.resources
-C:\Users\Tomás Coelho\Desktop\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucClientes.resources
-C:\Users\Tomás Coelho\Desktop\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucFilmes.resources
-C:\Users\Tomás Coelho\Desktop\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucHome.resources
-C:\Users\Tomás Coelho\Desktop\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucSessoes.resources
-C:\Users\Tomás Coelho\Desktop\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucAdmin.resources
 C:\Users\artur\OneDrive\Ambiente de Trabalho\Escola\Projetos\Desenvolvimento de Aplicações\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucAdmin.resources
 C:\Users\artur\OneDrive\Ambiente de Trabalho\Escola\Projetos\Desenvolvimento de Aplicações\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucAtendimento.resources
 C:\Users\artur\OneDrive\Ambiente de Trabalho\Escola\Projetos\Desenvolvimento de Aplicações\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucCinema.resources
@@ -57,3 +50,55 @@ C:\Users\Tomás Coelho\Documents\GitHub\PSI_DA_PL2-F\CineGest v3\CineGest\obj\De
 C:\Users\Tomás Coelho\Documents\GitHub\PSI_DA_PL2-F\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.pdb
 C:\Users\Tomás Coelho\Documents\GitHub\PSI_DA_PL2-F\CineGest v3\CineGest\bin\Debug\CineGest.mdf
 C:\Users\Tomás Coelho\Documents\GitHub\PSI_DA_PL2-F\CineGest v3\CineGest\bin\Debug\CineGest_log.ldf
+C:\Users\artur\OneDrive\Ambiente de Trabalho\CineGest v3\CineGest\bin\Debug\CineGest.mdf
+C:\Users\artur\OneDrive\Ambiente de Trabalho\CineGest v3\CineGest\bin\Debug\CineGest_log.ldf
+C:\Users\artur\OneDrive\Ambiente de Trabalho\CineGest v3\CineGest\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\artur\OneDrive\Ambiente de Trabalho\CineGest v3\CineGest\bin\Debug\WindowsFormsApp1.exe
+C:\Users\artur\OneDrive\Ambiente de Trabalho\CineGest v3\CineGest\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\artur\OneDrive\Ambiente de Trabalho\CineGest v3\CineGest\obj\Debug\CineGest.csproj.AssemblyReference.cache
+C:\Users\artur\OneDrive\Ambiente de Trabalho\CineGest v3\CineGest\obj\Debug\CineGest.csproj.SuggestedBindingRedirects.cache
+C:\Users\artur\OneDrive\Ambiente de Trabalho\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.FormLogin.resources
+C:\Users\artur\OneDrive\Ambiente de Trabalho\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.FormMenu.resources
+C:\Users\artur\OneDrive\Ambiente de Trabalho\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\artur\OneDrive\Ambiente de Trabalho\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucAdmin.resources
+C:\Users\artur\OneDrive\Ambiente de Trabalho\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucAtendimento.resources
+C:\Users\artur\OneDrive\Ambiente de Trabalho\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucCinema.resources
+C:\Users\artur\OneDrive\Ambiente de Trabalho\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucFilmes.resources
+C:\Users\artur\OneDrive\Ambiente de Trabalho\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucHome.resources
+C:\Users\artur\OneDrive\Ambiente de Trabalho\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucSessoes.resources
+C:\Users\artur\OneDrive\Ambiente de Trabalho\CineGest v3\CineGest\obj\Debug\CineGest.csproj.GenerateResource.cache
+C:\Users\artur\OneDrive\Ambiente de Trabalho\CineGest v3\CineGest\obj\Debug\CineGest.csproj.CoreCompileInputs.cache
+C:\Users\artur\OneDrive\Ambiente de Trabalho\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.exe
+C:\Users\artur\OneDrive\Ambiente de Trabalho\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\Tomás Coelho\Desktop\CineGest v3\CineGest\bin\Debug\CineGest.mdf
+C:\Users\Tomás Coelho\Desktop\CineGest v3\CineGest\bin\Debug\CineGest_log.ldf
+C:\Users\artur\OneDrive\Ambiente de Trabalho\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.View.FormAdmin.resources
+C:\Users\artur\OneDrive\Ambiente de Trabalho\Nova pasta\CineGest v3\CineGest\bin\Debug\CineGest.mdf
+C:\Users\artur\OneDrive\Ambiente de Trabalho\Nova pasta\CineGest v3\CineGest\bin\Debug\CineGest_log.ldf
+C:\Users\artur\OneDrive\Ambiente de Trabalho\Nova pasta\CineGest v3\CineGest\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\artur\OneDrive\Ambiente de Trabalho\Nova pasta\CineGest v3\CineGest\bin\Debug\WindowsFormsApp1.exe
+C:\Users\artur\OneDrive\Ambiente de Trabalho\Nova pasta\CineGest v3\CineGest\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\artur\OneDrive\Ambiente de Trabalho\Nova pasta\CineGest v3\CineGest\obj\Debug\CineGest.csproj.AssemblyReference.cache
+C:\Users\artur\OneDrive\Ambiente de Trabalho\Nova pasta\CineGest v3\CineGest\obj\Debug\CineGest.csproj.SuggestedBindingRedirects.cache
+C:\Users\artur\OneDrive\Ambiente de Trabalho\Nova pasta\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.View.FormAdmin.resources
+C:\Users\artur\OneDrive\Ambiente de Trabalho\Nova pasta\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.FormLogin.resources
+C:\Users\artur\OneDrive\Ambiente de Trabalho\Nova pasta\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.FormMenu.resources
+C:\Users\artur\OneDrive\Ambiente de Trabalho\Nova pasta\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\artur\OneDrive\Ambiente de Trabalho\Nova pasta\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucAdmin.resources
+C:\Users\artur\OneDrive\Ambiente de Trabalho\Nova pasta\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucAtendimento.resources
+C:\Users\artur\OneDrive\Ambiente de Trabalho\Nova pasta\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucCinema.resources
+C:\Users\artur\OneDrive\Ambiente de Trabalho\Nova pasta\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucClientes.resources
+C:\Users\artur\OneDrive\Ambiente de Trabalho\Nova pasta\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucFilmes.resources
+C:\Users\artur\OneDrive\Ambiente de Trabalho\Nova pasta\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucHome.resources
+C:\Users\artur\OneDrive\Ambiente de Trabalho\Nova pasta\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.ucSessoes.resources
+C:\Users\artur\OneDrive\Ambiente de Trabalho\Nova pasta\CineGest v3\CineGest\obj\Debug\CineGest.csproj.GenerateResource.cache
+C:\Users\artur\OneDrive\Ambiente de Trabalho\Nova pasta\CineGest v3\CineGest\obj\Debug\CineGest.csproj.CoreCompileInputs.cache
+C:\Users\artur\OneDrive\Ambiente de Trabalho\Nova pasta\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.exe
+C:\Users\artur\OneDrive\Ambiente de Trabalho\Nova pasta\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\artur\OneDrive\Ambiente de Trabalho\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.View.FormCliente.resources
+C:\Users\Tomás Coelho\Desktop\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.View.FormAdmin.resources
+C:\Users\Tomás Coelho\Desktop\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.View.FormCliente.resources
+C:\Users\Tomás Coelho\Desktop\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.View.FormAtendimento.resources
+C:\Users\Tomás Coelho\Desktop\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.View.FormCinema.resources
+C:\Users\Tomás Coelho\Desktop\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.View.FormFilmes.resources
+C:\Users\Tomás Coelho\Desktop\CineGest v3\CineGest\obj\Debug\WindowsFormsApp1.View.FormSessoes.resources

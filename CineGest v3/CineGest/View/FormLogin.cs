@@ -18,6 +18,7 @@ namespace WindowsFormsApp1
     public partial class FormLogin : Form
     {
         Thread nt;
+        public static string username_global;
         public FormLogin()
         {
             InitializeComponent();
@@ -66,12 +67,15 @@ namespace WindowsFormsApp1
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            string username = txtPassword.Text;
+            string username = txtUser.Text;
             string password = txtPassword.Text;
+            string permissao;
+
+            username_global = username;
 
             DBConnection dbConnection = new DBConnection();
 
-            if (dbConnection.DBConnect(username, password))
+            if (dbConnection.DBConnect(username, password, out permissao))
             {
                 this.Close();
                 nt = new Thread(novoform); //inicia um novo processo, que é o form
