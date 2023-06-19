@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Diagnostics;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -136,6 +140,133 @@ namespace WindowsFormsApp1.Controller
             if (resultado == DialogResult.Yes)
             {
                 Application.Exit();
+            }
+        }
+        public string getCinema()
+        {
+            string baseDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string databaseFilePath = Path.Combine(baseDirectory, @"CineGest v3\CineGest\CineGest.mdf");
+            string connectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={databaseFilePath};Integrated Security=True";
+            string nomeDoCinema = "";
+            string query = "SELECT Nome FROM Cinema WHERE ID = 1";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    string cinemaName = reader["Nome"].ToString();
+
+                    nomeDoCinema = cinemaName;
+                }
+
+                reader.Close();
+                connection.Close();
+
+                return nomeDoCinema;
+            }
+        }
+
+        public void AdicionarItemsComboBoxSessoes(ComboBox comboBox)
+        {
+            string baseDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string databaseFilePath = Path.Combine(baseDirectory, @"CineGest v3\CineGest\CineGest.mdf");
+            string connectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={databaseFilePath};Integrated Security=True";
+
+            string query = "SELECT DataHora FROM Sessao";
+
+            List<string> sessoesExistentes = new List<string>();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    DateTime sessao = reader.GetDateTime(0);
+                    string sessaoString = sessao.ToString();
+                    sessoesExistentes.Add(sessaoString);
+                }
+
+                reader.Close();
+                connection.Close();
+            }
+            comboBox.Items.Clear();
+            comboBox.Items.AddRange(sessoesExistentes.ToArray());
+        }
+
+        public void gerarColunaseLinhas(ComboBox cbEscolherSala, TableLayoutPanel tableBtn)
+        {
+
+            string baseDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string databaseFilePath = Path.Combine(baseDirectory, @"CineGest v3\CineGest\CineGest.mdf");
+            string connectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={databaseFilePath};Integrated Security=True";
+
+            string selectedItem = cbEscolherSala.SelectedItem.ToString();
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+
+                string query = $"SELECT Filas, Colunas FROM Sala WHERE Nome = '{selectedItem}'";
+                SqlCommand command = new SqlCommand(query, con);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    int linhas = reader.GetInt32(0);
+                    int colunas = reader.GetInt32(1);
+
+                    tableBtn.Controls.Clear();
+                    tableBtn.ColumnStyles.Clear();
+                    tableBtn.RowStyles.Clear();
+                    tableBtn.RowCount = linhas;
+                    tableBtn.ColumnCount = colunas;
+
+                    for (int row = 0; row < linhas; row++)
+                    {
+                        tableBtn.RowStyles.Add(new RowStyle(SizeType.Percent, 100F / linhas));
+
+                        for (int col = 0; col < colunas; col++)
+                        {
+                            tableBtn.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F / colunas));
+
+                            Button button = new Button();
+
+                            button.Dock = DockStyle.Fill;
+
+                            button.Name = $"btn_{row}_{col}";
+
+                            button.Click += botaoClicado;
+
+                            tableBtn.Controls.Add(button, col, row);
+                        }
+                    }
+                }
+
+                reader.Close();
+                con.Close();
+            }
+        }
+        private void botaoClicado(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+
+            if (button.BackColor == ColorTranslator.FromHtml("#5C5C5C"))
+            {
+                button.BackColor = ColorTranslator.FromHtml("#29BB1D");
+            }
+            else
+            {
+                button.BackColor = ColorTranslator.FromHtml("#5C5C5C");
             }
         }
     }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCliente));
             this.pbGestao = new System.Windows.Forms.PictureBox();
             this.lblgestao = new System.Windows.Forms.Label();
@@ -40,7 +41,13 @@
             this.pbLogoMenu = new System.Windows.Forms.PictureBox();
             this.lb_data = new System.Windows.Forms.Label();
             this.painelContentor = new System.Windows.Forms.Panel();
-            this.btnModificarCliente = new System.Windows.Forms.Button();
+            this.dataGridView_Clientes = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numFiscalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.moradaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cineGestDataSet1 = new WindowsFormsApp1.CineGestDataSet1();
             this.gbRegistarClientes = new System.Windows.Forms.GroupBox();
             this.btnRegistarCliente = new System.Windows.Forms.Button();
             this.txtNIF = new System.Windows.Forms.TextBox();
@@ -49,7 +56,6 @@
             this.lblMorada = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.lbClientes = new System.Windows.Forms.ListBox();
             this.pbAtendimento = new System.Windows.Forms.PictureBox();
             this.lblUpperMenu = new System.Windows.Forms.Label();
             this.lblClientes = new System.Windows.Forms.Label();
@@ -60,6 +66,9 @@
             this.lblDashboard = new System.Windows.Forms.Label();
             this.lblMenuMenu = new System.Windows.Forms.Label();
             this.pbSair = new System.Windows.Forms.PictureBox();
+            this.clienteTableAdapter = new WindowsFormsApp1.CineGestDataSet1TableAdapters.ClienteTableAdapter();
+            this.lblInfo = new System.Windows.Forms.Label();
+            this.btnModificarCliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbGestao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDashboard)).BeginInit();
@@ -68,6 +77,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbCinema)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogoMenu)).BeginInit();
             this.painelContentor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Clientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cineGestDataSet1)).BeginInit();
             this.gbRegistarClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAtendimento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSair)).BeginInit();
@@ -189,33 +201,68 @@
             // painelContentor
             // 
             this.painelContentor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.painelContentor.Controls.Add(this.btnModificarCliente);
+            this.painelContentor.Controls.Add(this.dataGridView_Clientes);
             this.painelContentor.Controls.Add(this.gbRegistarClientes);
-            this.painelContentor.Controls.Add(this.lbClientes);
             this.painelContentor.Location = new System.Drawing.Point(246, 29);
             this.painelContentor.Name = "painelContentor";
             this.painelContentor.Size = new System.Drawing.Size(782, 537);
             this.painelContentor.TabIndex = 42;
             // 
-            // btnModificarCliente
+            // dataGridView_Clientes
             // 
-            this.btnModificarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(185)))), ((int)(((byte)(221)))));
-            this.btnModificarCliente.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(185)))), ((int)(((byte)(221)))));
-            this.btnModificarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificarCliente.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.btnModificarCliente.ForeColor = System.Drawing.Color.Black;
-            this.btnModificarCliente.Location = new System.Drawing.Point(564, 321);
-            this.btnModificarCliente.Margin = new System.Windows.Forms.Padding(2);
-            this.btnModificarCliente.Name = "btnModificarCliente";
-            this.btnModificarCliente.Size = new System.Drawing.Size(143, 78);
-            this.btnModificarCliente.TabIndex = 56;
-            this.btnModificarCliente.Text = "MODIFICAR";
-            this.btnModificarCliente.UseVisualStyleBackColor = false;
-            this.btnModificarCliente.Click += new System.EventHandler(this.btnModificarCliente_Click_1);
+            this.dataGridView_Clientes.AutoGenerateColumns = false;
+            this.dataGridView_Clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Clientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.numFiscalDataGridViewTextBoxColumn,
+            this.nomeDataGridViewTextBoxColumn,
+            this.moradaDataGridViewTextBoxColumn});
+            this.dataGridView_Clientes.DataSource = this.clienteBindingSource;
+            this.dataGridView_Clientes.Location = new System.Drawing.Point(59, 232);
+            this.dataGridView_Clientes.Name = "dataGridView_Clientes";
+            this.dataGridView_Clientes.Size = new System.Drawing.Size(443, 281);
+            this.dataGridView_Clientes.TabIndex = 57;
+            this.dataGridView_Clientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Clientes_CellContentClick);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // numFiscalDataGridViewTextBoxColumn
+            // 
+            this.numFiscalDataGridViewTextBoxColumn.DataPropertyName = "NumFiscal";
+            this.numFiscalDataGridViewTextBoxColumn.HeaderText = "NumFiscal";
+            this.numFiscalDataGridViewTextBoxColumn.Name = "numFiscalDataGridViewTextBoxColumn";
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            // 
+            // moradaDataGridViewTextBoxColumn
+            // 
+            this.moradaDataGridViewTextBoxColumn.DataPropertyName = "Morada";
+            this.moradaDataGridViewTextBoxColumn.HeaderText = "Morada";
+            this.moradaDataGridViewTextBoxColumn.Name = "moradaDataGridViewTextBoxColumn";
+            // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataMember = "Cliente";
+            this.clienteBindingSource.DataSource = this.cineGestDataSet1;
+            // 
+            // cineGestDataSet1
+            // 
+            this.cineGestDataSet1.DataSetName = "CineGestDataSet1";
+            this.cineGestDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gbRegistarClientes
             // 
             this.gbRegistarClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.gbRegistarClientes.Controls.Add(this.btnModificarCliente);
             this.gbRegistarClientes.Controls.Add(this.btnRegistarCliente);
             this.gbRegistarClientes.Controls.Add(this.txtNIF);
             this.gbRegistarClientes.Controls.Add(this.txtMorada);
@@ -237,10 +284,10 @@
             this.btnRegistarCliente.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(185)))), ((int)(((byte)(221)))));
             this.btnRegistarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistarCliente.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.btnRegistarCliente.Location = new System.Drawing.Point(410, 63);
+            this.btnRegistarCliente.Location = new System.Drawing.Point(429, 38);
             this.btnRegistarCliente.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegistarCliente.Name = "btnRegistarCliente";
-            this.btnRegistarCliente.Size = new System.Drawing.Size(143, 76);
+            this.btnRegistarCliente.Size = new System.Drawing.Size(136, 59);
             this.btnRegistarCliente.TabIndex = 7;
             this.btnRegistarCliente.Text = "REGISTAR CLIENTE";
             this.btnRegistarCliente.UseVisualStyleBackColor = false;
@@ -296,14 +343,6 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(123, 20);
             this.txtNome.TabIndex = 0;
-            // 
-            // lbClientes
-            // 
-            this.lbClientes.FormattingEnabled = true;
-            this.lbClientes.Location = new System.Drawing.Point(59, 248);
-            this.lbClientes.Name = "lbClientes";
-            this.lbClientes.Size = new System.Drawing.Size(494, 264);
-            this.lbClientes.TabIndex = 55;
             // 
             // pbAtendimento
             // 
@@ -419,6 +458,34 @@
             this.pbSair.TabStop = false;
             this.pbSair.Click += new System.EventHandler(this.pbSair_Click);
             // 
+            // clienteTableAdapter
+            // 
+            this.clienteTableAdapter.ClearBeforeFill = true;
+            // 
+            // lblInfo
+            // 
+            this.lblInfo.BackColor = System.Drawing.Color.Silver;
+            this.lblInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfo.Location = new System.Drawing.Point(744, 6);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(271, 20);
+            this.lblInfo.TabIndex = 62;
+            // 
+            // btnModificarCliente
+            // 
+            this.btnModificarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(185)))), ((int)(((byte)(221)))));
+            this.btnModificarCliente.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(185)))), ((int)(((byte)(221)))));
+            this.btnModificarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificarCliente.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.btnModificarCliente.Location = new System.Drawing.Point(429, 108);
+            this.btnModificarCliente.Margin = new System.Windows.Forms.Padding(2);
+            this.btnModificarCliente.Name = "btnModificarCliente";
+            this.btnModificarCliente.Size = new System.Drawing.Size(136, 59);
+            this.btnModificarCliente.TabIndex = 8;
+            this.btnModificarCliente.Text = "MODIFICAR CLIENTE";
+            this.btnModificarCliente.UseVisualStyleBackColor = false;
+            this.btnModificarCliente.Click += new System.EventHandler(this.btnModificarCliente_Click_2);
+            // 
             // FormCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -426,6 +493,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(29)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(1027, 564);
             this.ControlBox = false;
+            this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.pbSair);
             this.Controls.Add(this.pbGestao);
             this.Controls.Add(this.lblgestao);
@@ -461,6 +529,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbCinema)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogoMenu)).EndInit();
             this.painelContentor.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Clientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cineGestDataSet1)).EndInit();
             this.gbRegistarClientes.ResumeLayout(false);
             this.gbRegistarClientes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAtendimento)).EndInit();
@@ -492,7 +563,6 @@
         private System.Windows.Forms.Label lblAtendimento;
         private System.Windows.Forms.Label lblDashboard;
         private System.Windows.Forms.Label lblMenuMenu;
-        private System.Windows.Forms.Button btnModificarCliente;
         private System.Windows.Forms.GroupBox gbRegistarClientes;
         private System.Windows.Forms.Button btnRegistarCliente;
         private System.Windows.Forms.TextBox txtNIF;
@@ -501,7 +571,16 @@
         private System.Windows.Forms.Label lblMorada;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.ListBox lbClientes;
         private System.Windows.Forms.PictureBox pbSair;
+        private System.Windows.Forms.DataGridView dataGridView_Clientes;
+        private CineGestDataSet1 cineGestDataSet1;
+        private System.Windows.Forms.BindingSource clienteBindingSource;
+        private CineGestDataSet1TableAdapters.ClienteTableAdapter clienteTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numFiscalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn moradaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label lblInfo;
+        private System.Windows.Forms.Button btnModificarCliente;
     }
 }

@@ -61,6 +61,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CineGestDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CineGestDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CineGestDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CineGestDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CineGestDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CineGestDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CineGestDataSet_Cinema.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CineGestDataSet_Cinema.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CineGestDataSet_Filmes1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CineGestDataSet_Filmes1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CineGestDataSet_Salas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CineGestDataSet_Salas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CineGestDataSet_Sessao.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CineGestDataSet_Sessao.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Controller\Admin.cs" />
     <Compile Include="Controller\Bilhete.cs" />
     <Compile Include="Controller\Categoria.cs" />
@@ -158,6 +193,83 @@
     <EmbeddedResource Include="View\FormSessoes.resx">
       <DependentUpon>FormSessoes.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="CineGestDataSet.xsc">
+      <DependentUpon>CineGestDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CineGestDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CineGestDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CineGestDataSet.xss">
+      <DependentUpon>CineGestDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CineGestDataSet1.xsc">
+      <DependentUpon>CineGestDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="CineGestDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CineGestDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CineGestDataSet1.xss">
+      <DependentUpon>CineGestDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="CineGestDataSet2.xsc">
+      <DependentUpon>CineGestDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="CineGestDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CineGestDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CineGestDataSet2.xss">
+      <DependentUpon>CineGestDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="CineGestDataSet_Cinema.xsc">
+      <DependentUpon>CineGestDataSet_Cinema.xsd</DependentUpon>
+    </None>
+    <None Include="CineGestDataSet_Cinema.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CineGestDataSet_Cinema.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CineGestDataSet_Cinema.xss">
+      <DependentUpon>CineGestDataSet_Cinema.xsd</DependentUpon>
+    </None>
+    <None Include="CineGestDataSet_Filmes1.xsc">
+      <DependentUpon>CineGestDataSet_Filmes1.xsd</DependentUpon>
+    </None>
+    <None Include="CineGestDataSet_Filmes1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CineGestDataSet_Filmes1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CineGestDataSet_Filmes1.xss">
+      <DependentUpon>CineGestDataSet_Filmes1.xsd</DependentUpon>
+    </None>
+    <None Include="CineGestDataSet_Salas.xsc">
+      <DependentUpon>CineGestDataSet_Salas.xsd</DependentUpon>
+    </None>
+    <None Include="CineGestDataSet_Salas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CineGestDataSet_Salas.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CineGestDataSet_Salas.xss">
+      <DependentUpon>CineGestDataSet_Salas.xsd</DependentUpon>
+    </None>
+    <None Include="CineGestDataSet_Sessao.xsc">
+      <DependentUpon>CineGestDataSet_Sessao.xsd</DependentUpon>
+    </None>
+    <None Include="CineGestDataSet_Sessao.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CineGestDataSet_Sessao.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CineGestDataSet_Sessao.xss">
+      <DependentUpon>CineGestDataSet_Sessao.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

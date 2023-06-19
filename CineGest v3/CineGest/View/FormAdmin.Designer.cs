@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdmin));
             this.label1 = new System.Windows.Forms.Label();
             this.pbSair = new System.Windows.Forms.PictureBox();
@@ -47,19 +48,45 @@
             this.lblAtendimento = new System.Windows.Forms.Label();
             this.lblDashboard = new System.Windows.Forms.Label();
             this.lblMenuMenu = new System.Windows.Forms.Label();
-            this.lblSessoesHoje = new System.Windows.Forms.Label();
             this.gbRegUsers = new System.Windows.Forms.GroupBox();
+            this.cbPerms = new System.Windows.Forms.ComboBox();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.lblAdicionarPermissoes = new System.Windows.Forms.Label();
             this.bt_registaruser = new System.Windows.Forms.Button();
             this.lblAdicionarPassword = new System.Windows.Forms.Label();
             this.lblAdicionarUsername = new System.Windows.Forms.Label();
-            this.txtpermissao = new System.Windows.Forms.TextBox();
             this.txt_usuario = new System.Windows.Forms.TextBox();
             this.txt_password = new System.Windows.Forms.TextBox();
             this.lblUtilizadoresRegistados = new System.Windows.Forms.Label();
             this.painelContentor = new System.Windows.Forms.Panel();
+            this.dataGridView_Users = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.utilizadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.permissoesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loginBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cineGestDataSet = new WindowsFormsApp1.CineGestDataSet();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.moradaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cinemaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cineGestDataSet_Cinema = new WindowsFormsApp1.CineGestDataSet_Cinema();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnCriarCinema = new System.Windows.Forms.Button();
+            this.txtEmailCinema = new System.Windows.Forms.TextBox();
+            this.lblCinemaEmail = new System.Windows.Forms.Label();
+            this.lblMoradaCinema = new System.Windows.Forms.Label();
+            this.lblNomeCinema = new System.Windows.Forms.Label();
+            this.txtNomeCinema = new System.Windows.Forms.TextBox();
+            this.txtMoradaCinema = new System.Windows.Forms.TextBox();
             this.pbGestao = new System.Windows.Forms.PictureBox();
             this.lblgestao = new System.Windows.Forms.Label();
+            this.loginTableAdapter = new WindowsFormsApp1.CineGestDataSetTableAdapters.LoginTableAdapter();
+            this.cinemaTableAdapter = new WindowsFormsApp1.CineGestDataSet_CinemaTableAdapters.CinemaTableAdapter();
+            this.lblInfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbSair)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDashboard)).BeginInit();
@@ -70,6 +97,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbAtendimento)).BeginInit();
             this.gbRegUsers.SuspendLayout();
             this.painelContentor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Users)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loginBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cineGestDataSet)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cinemaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cineGestDataSet_Cinema)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGestao)).BeginInit();
             this.SuspendLayout();
             // 
@@ -276,37 +310,49 @@
             this.lblMenuMenu.TabIndex = 34;
             this.lblMenuMenu.Text = "Menu";
             // 
-            // lblSessoesHoje
-            // 
-            this.lblSessoesHoje.AutoSize = true;
-            this.lblSessoesHoje.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.lblSessoesHoje.ForeColor = System.Drawing.Color.Black;
-            this.lblSessoesHoje.Location = new System.Drawing.Point(92, 244);
-            this.lblSessoesHoje.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblSessoesHoje.Name = "lblSessoesHoje";
-            this.lblSessoesHoje.Size = new System.Drawing.Size(195, 24);
-            this.lblSessoesHoje.TabIndex = 56;
-            this.lblSessoesHoje.Text = "Sessões para Hoje:";
-            // 
             // gbRegUsers
             // 
             this.gbRegUsers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.gbRegUsers.Controls.Add(this.cbPerms);
+            this.gbRegUsers.Controls.Add(this.btnModificar);
             this.gbRegUsers.Controls.Add(this.lblAdicionarPermissoes);
             this.gbRegUsers.Controls.Add(this.bt_registaruser);
             this.gbRegUsers.Controls.Add(this.lblAdicionarPassword);
             this.gbRegUsers.Controls.Add(this.lblAdicionarUsername);
-            this.gbRegUsers.Controls.Add(this.txtpermissao);
             this.gbRegUsers.Controls.Add(this.txt_usuario);
             this.gbRegUsers.Controls.Add(this.txt_password);
             this.gbRegUsers.ForeColor = System.Drawing.Color.Black;
-            this.gbRegUsers.Location = new System.Drawing.Point(97, 50);
+            this.gbRegUsers.Location = new System.Drawing.Point(25, 35);
             this.gbRegUsers.Margin = new System.Windows.Forms.Padding(2);
             this.gbRegUsers.Name = "gbRegUsers";
             this.gbRegUsers.Padding = new System.Windows.Forms.Padding(2);
-            this.gbRegUsers.Size = new System.Drawing.Size(569, 176);
+            this.gbRegUsers.Size = new System.Drawing.Size(429, 176);
             this.gbRegUsers.TabIndex = 55;
             this.gbRegUsers.TabStop = false;
             this.gbRegUsers.Text = "Registar Utilizadores";
+            // 
+            // cbPerms
+            // 
+            this.cbPerms.FormattingEnabled = true;
+            this.cbPerms.Location = new System.Drawing.Point(130, 114);
+            this.cbPerms.Name = "cbPerms";
+            this.cbPerms.Size = new System.Drawing.Size(121, 21);
+            this.cbPerms.TabIndex = 12;
+            this.cbPerms.SelectedIndexChanged += new System.EventHandler(this.cbPerms_SelectedIndexChanged);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(185)))), ((int)(((byte)(221)))));
+            this.btnModificar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(185)))), ((int)(((byte)(221)))));
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.Location = new System.Drawing.Point(280, 98);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(114, 54);
+            this.btnModificar.TabIndex = 11;
+            this.btnModificar.Text = "Modificar Utilizador";
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // lblAdicionarPermissoes
             // 
@@ -324,10 +370,10 @@
             this.bt_registaruser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(185)))), ((int)(((byte)(221)))));
             this.bt_registaruser.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(185)))), ((int)(((byte)(221)))));
             this.bt_registaruser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_registaruser.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.bt_registaruser.Location = new System.Drawing.Point(376, 53);
+            this.bt_registaruser.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_registaruser.Location = new System.Drawing.Point(280, 20);
             this.bt_registaruser.Name = "bt_registaruser";
-            this.bt_registaruser.Size = new System.Drawing.Size(146, 71);
+            this.bt_registaruser.Size = new System.Drawing.Size(114, 54);
             this.bt_registaruser.TabIndex = 3;
             this.bt_registaruser.Text = "Registar Utilizador";
             this.bt_registaruser.UseVisualStyleBackColor = false;
@@ -355,25 +401,18 @@
             this.lblAdicionarUsername.TabIndex = 8;
             this.lblAdicionarUsername.Text = "Nome:";
             // 
-            // txtpermissao
-            // 
-            this.txtpermissao.Location = new System.Drawing.Point(130, 118);
-            this.txtpermissao.Name = "txtpermissao";
-            this.txtpermissao.Size = new System.Drawing.Size(100, 20);
-            this.txtpermissao.TabIndex = 6;
-            // 
             // txt_usuario
             // 
             this.txt_usuario.Location = new System.Drawing.Point(130, 37);
             this.txt_usuario.Name = "txt_usuario";
-            this.txt_usuario.Size = new System.Drawing.Size(100, 20);
+            this.txt_usuario.Size = new System.Drawing.Size(121, 20);
             this.txt_usuario.TabIndex = 4;
             // 
             // txt_password
             // 
             this.txt_password.Location = new System.Drawing.Point(130, 75);
             this.txt_password.Name = "txt_password";
-            this.txt_password.Size = new System.Drawing.Size(100, 20);
+            this.txt_password.Size = new System.Drawing.Size(121, 20);
             this.txt_password.TabIndex = 5;
             // 
             // lblUtilizadoresRegistados
@@ -381,7 +420,7 @@
             this.lblUtilizadoresRegistados.AutoSize = true;
             this.lblUtilizadoresRegistados.Font = new System.Drawing.Font("Arial", 15.75F);
             this.lblUtilizadoresRegistados.ForeColor = System.Drawing.Color.Black;
-            this.lblUtilizadoresRegistados.Location = new System.Drawing.Point(421, 244);
+            this.lblUtilizadoresRegistados.Location = new System.Drawing.Point(21, 224);
             this.lblUtilizadoresRegistados.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUtilizadoresRegistados.Name = "lblUtilizadoresRegistados";
             this.lblUtilizadoresRegistados.Size = new System.Drawing.Size(236, 24);
@@ -391,13 +430,220 @@
             // painelContentor
             // 
             this.painelContentor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.painelContentor.Controls.Add(this.dataGridView_Users);
+            this.painelContentor.Controls.Add(this.groupBox1);
             this.painelContentor.Controls.Add(this.lblUtilizadoresRegistados);
             this.painelContentor.Controls.Add(this.gbRegUsers);
-            this.painelContentor.Controls.Add(this.lblSessoesHoje);
             this.painelContentor.Location = new System.Drawing.Point(247, 30);
             this.painelContentor.Name = "painelContentor";
             this.painelContentor.Size = new System.Drawing.Size(782, 537);
             this.painelContentor.TabIndex = 42;
+            // 
+            // dataGridView_Users
+            // 
+            this.dataGridView_Users.AutoGenerateColumns = false;
+            this.dataGridView_Users.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Users.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.utilizadorDataGridViewTextBoxColumn,
+            this.passwordDataGridViewTextBoxColumn,
+            this.permissoesDataGridViewTextBoxColumn});
+            this.dataGridView_Users.DataSource = this.loginBindingSource;
+            this.dataGridView_Users.Location = new System.Drawing.Point(25, 251);
+            this.dataGridView_Users.Name = "dataGridView_Users";
+            this.dataGridView_Users.Size = new System.Drawing.Size(429, 259);
+            this.dataGridView_Users.TabIndex = 58;
+            this.dataGridView_Users.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Users_CellContentClick);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // utilizadorDataGridViewTextBoxColumn
+            // 
+            this.utilizadorDataGridViewTextBoxColumn.DataPropertyName = "Utilizador";
+            this.utilizadorDataGridViewTextBoxColumn.HeaderText = "Utilizador";
+            this.utilizadorDataGridViewTextBoxColumn.Name = "utilizadorDataGridViewTextBoxColumn";
+            // 
+            // passwordDataGridViewTextBoxColumn
+            // 
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            // 
+            // permissoesDataGridViewTextBoxColumn
+            // 
+            this.permissoesDataGridViewTextBoxColumn.DataPropertyName = "Permissoes";
+            this.permissoesDataGridViewTextBoxColumn.HeaderText = "Permissoes";
+            this.permissoesDataGridViewTextBoxColumn.Name = "permissoesDataGridViewTextBoxColumn";
+            // 
+            // loginBindingSource
+            // 
+            this.loginBindingSource.DataMember = "Login";
+            this.loginBindingSource.DataSource = this.cineGestDataSet;
+            // 
+            // cineGestDataSet
+            // 
+            this.cineGestDataSet.DataSetName = "CineGestDataSet";
+            this.cineGestDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnCriarCinema);
+            this.groupBox1.Controls.Add(this.txtEmailCinema);
+            this.groupBox1.Controls.Add(this.lblCinemaEmail);
+            this.groupBox1.Controls.Add(this.lblMoradaCinema);
+            this.groupBox1.Controls.Add(this.lblNomeCinema);
+            this.groupBox1.Controls.Add(this.txtNomeCinema);
+            this.groupBox1.Controls.Add(this.txtMoradaCinema);
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
+            this.groupBox1.Location = new System.Drawing.Point(472, 35);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(291, 475);
+            this.groupBox1.TabIndex = 56;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Cinema";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn1,
+            this.nomeDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn,
+            this.moradaDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.cinemaBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(5, 189);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(281, 187);
+            this.dataGridView1.TabIndex = 14;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
+            // moradaDataGridViewTextBoxColumn
+            // 
+            this.moradaDataGridViewTextBoxColumn.DataPropertyName = "Morada";
+            this.moradaDataGridViewTextBoxColumn.HeaderText = "Morada";
+            this.moradaDataGridViewTextBoxColumn.Name = "moradaDataGridViewTextBoxColumn";
+            // 
+            // cinemaBindingSource
+            // 
+            this.cinemaBindingSource.DataMember = "Cinema";
+            this.cinemaBindingSource.DataSource = this.cineGestDataSet_Cinema;
+            // 
+            // cineGestDataSet_Cinema
+            // 
+            this.cineGestDataSet_Cinema.DataSetName = "CineGestDataSet_Cinema";
+            this.cineGestDataSet_Cinema.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(185)))), ((int)(((byte)(221)))));
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(185)))), ((int)(((byte)(221)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(147, 395);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(114, 54);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Alterar Cinema";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnCriarCinema
+            // 
+            this.btnCriarCinema.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(185)))), ((int)(((byte)(221)))));
+            this.btnCriarCinema.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(185)))), ((int)(((byte)(221)))));
+            this.btnCriarCinema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCriarCinema.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCriarCinema.Location = new System.Drawing.Point(21, 395);
+            this.btnCriarCinema.Name = "btnCriarCinema";
+            this.btnCriarCinema.Size = new System.Drawing.Size(114, 54);
+            this.btnCriarCinema.TabIndex = 12;
+            this.btnCriarCinema.Text = "Criar Cinema";
+            this.btnCriarCinema.UseVisualStyleBackColor = false;
+            this.btnCriarCinema.Click += new System.EventHandler(this.btnCriarCinema_Click);
+            // 
+            // txtEmailCinema
+            // 
+            this.txtEmailCinema.Location = new System.Drawing.Point(104, 106);
+            this.txtEmailCinema.Name = "txtEmailCinema";
+            this.txtEmailCinema.Size = new System.Drawing.Size(149, 20);
+            this.txtEmailCinema.TabIndex = 11;
+            // 
+            // lblCinemaEmail
+            // 
+            this.lblCinemaEmail.AutoSize = true;
+            this.lblCinemaEmail.Font = new System.Drawing.Font("Arial", 10.75F);
+            this.lblCinemaEmail.ForeColor = System.Drawing.Color.Black;
+            this.lblCinemaEmail.Location = new System.Drawing.Point(33, 107);
+            this.lblCinemaEmail.Name = "lblCinemaEmail";
+            this.lblCinemaEmail.Size = new System.Drawing.Size(49, 17);
+            this.lblCinemaEmail.TabIndex = 10;
+            this.lblCinemaEmail.Text = "Email:";
+            // 
+            // lblMoradaCinema
+            // 
+            this.lblMoradaCinema.AutoSize = true;
+            this.lblMoradaCinema.Font = new System.Drawing.Font("Arial", 10.75F);
+            this.lblMoradaCinema.ForeColor = System.Drawing.Color.Black;
+            this.lblMoradaCinema.Location = new System.Drawing.Point(33, 73);
+            this.lblMoradaCinema.Name = "lblMoradaCinema";
+            this.lblMoradaCinema.Size = new System.Drawing.Size(60, 17);
+            this.lblMoradaCinema.TabIndex = 9;
+            this.lblMoradaCinema.Text = "Morada:";
+            // 
+            // lblNomeCinema
+            // 
+            this.lblNomeCinema.AutoSize = true;
+            this.lblNomeCinema.Font = new System.Drawing.Font("Arial", 10.75F);
+            this.lblNomeCinema.ForeColor = System.Drawing.Color.Black;
+            this.lblNomeCinema.Location = new System.Drawing.Point(33, 37);
+            this.lblNomeCinema.Name = "lblNomeCinema";
+            this.lblNomeCinema.Size = new System.Drawing.Size(51, 17);
+            this.lblNomeCinema.TabIndex = 8;
+            this.lblNomeCinema.Text = "Nome:";
+            // 
+            // txtNomeCinema
+            // 
+            this.txtNomeCinema.Location = new System.Drawing.Point(104, 37);
+            this.txtNomeCinema.Name = "txtNomeCinema";
+            this.txtNomeCinema.Size = new System.Drawing.Size(149, 20);
+            this.txtNomeCinema.TabIndex = 4;
+            // 
+            // txtMoradaCinema
+            // 
+            this.txtMoradaCinema.Location = new System.Drawing.Point(104, 72);
+            this.txtMoradaCinema.Name = "txtMoradaCinema";
+            this.txtMoradaCinema.Size = new System.Drawing.Size(149, 20);
+            this.txtMoradaCinema.TabIndex = 5;
             // 
             // pbGestao
             // 
@@ -423,6 +669,23 @@
             this.lblgestao.Text = "Gestão";
             this.lblgestao.Visible = false;
             // 
+            // loginTableAdapter
+            // 
+            this.loginTableAdapter.ClearBeforeFill = true;
+            // 
+            // cinemaTableAdapter
+            // 
+            this.cinemaTableAdapter.ClearBeforeFill = true;
+            // 
+            // lblInfo
+            // 
+            this.lblInfo.BackColor = System.Drawing.Color.Silver;
+            this.lblInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfo.Location = new System.Drawing.Point(746, 5);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(271, 20);
+            this.lblInfo.TabIndex = 62;
+            // 
             // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -430,6 +693,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(29)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(1027, 564);
             this.ControlBox = false;
+            this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.pbGestao);
             this.Controls.Add(this.lblgestao);
             this.Controls.Add(this.label1);
@@ -469,6 +733,14 @@
             this.gbRegUsers.PerformLayout();
             this.painelContentor.ResumeLayout(false);
             this.painelContentor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Users)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loginBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cineGestDataSet)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cinemaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cineGestDataSet_Cinema)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGestao)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -494,18 +766,44 @@
         private System.Windows.Forms.Label lblAtendimento;
         private System.Windows.Forms.Label lblDashboard;
         private System.Windows.Forms.Label lblMenuMenu;
-        private System.Windows.Forms.Label lblSessoesHoje;
         private System.Windows.Forms.GroupBox gbRegUsers;
         private System.Windows.Forms.Label lblAdicionarPermissoes;
         private System.Windows.Forms.Button bt_registaruser;
         private System.Windows.Forms.Label lblAdicionarPassword;
         private System.Windows.Forms.Label lblAdicionarUsername;
-        private System.Windows.Forms.TextBox txtpermissao;
         private System.Windows.Forms.TextBox txt_usuario;
         private System.Windows.Forms.TextBox txt_password;
         private System.Windows.Forms.Label lblUtilizadoresRegistados;
         private System.Windows.Forms.Panel painelContentor;
         private System.Windows.Forms.PictureBox pbGestao;
         private System.Windows.Forms.Label lblgestao;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lblCinemaEmail;
+        private System.Windows.Forms.Label lblMoradaCinema;
+        private System.Windows.Forms.Label lblNomeCinema;
+        private System.Windows.Forms.TextBox txtNomeCinema;
+        private System.Windows.Forms.TextBox txtMoradaCinema;
+        private System.Windows.Forms.TextBox txtEmailCinema;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCriarCinema;
+        private System.Windows.Forms.DataGridView dataGridView_Users;
+        private CineGestDataSet cineGestDataSet;
+        private System.Windows.Forms.BindingSource loginBindingSource;
+        private CineGestDataSetTableAdapters.LoginTableAdapter loginTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn utilizadorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn permissoesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private CineGestDataSet_Cinema cineGestDataSet_Cinema;
+        private System.Windows.Forms.BindingSource cinemaBindingSource;
+        private CineGestDataSet_CinemaTableAdapters.CinemaTableAdapter cinemaTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn moradaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ComboBox cbPerms;
+        private System.Windows.Forms.Label lblInfo;
     }
 }

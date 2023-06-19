@@ -40,6 +40,7 @@
             this.pbLogoMenu = new System.Windows.Forms.PictureBox();
             this.lb_data = new System.Windows.Forms.Label();
             this.painelContentor = new System.Windows.Forms.Panel();
+            this.tableBtn = new System.Windows.Forms.TableLayoutPanel();
             this.lblSalaOcupacao = new System.Windows.Forms.Label();
             this.gbConfigSala = new System.Windows.Forms.GroupBox();
             this.btnModificarSala = new System.Windows.Forms.Button();
@@ -57,6 +58,8 @@
             this.lblDashboard = new System.Windows.Forms.Label();
             this.lblMenuMenu = new System.Windows.Forms.Label();
             this.pbSair = new System.Windows.Forms.PictureBox();
+            this.lblInfo = new System.Windows.Forms.Label();
+            this.cinemaTableAdapter1 = new WindowsFormsApp1.CineGestDataSet_CinemaTableAdapters.CinemaTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pbGestao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDashboard)).BeginInit();
@@ -187,6 +190,7 @@
             // painelContentor
             // 
             this.painelContentor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.painelContentor.Controls.Add(this.tableBtn);
             this.painelContentor.Controls.Add(this.lblSalaOcupacao);
             this.painelContentor.Controls.Add(this.gbConfigSala);
             this.painelContentor.Location = new System.Drawing.Point(246, 29);
@@ -194,11 +198,25 @@
             this.painelContentor.Size = new System.Drawing.Size(782, 537);
             this.painelContentor.TabIndex = 62;
             // 
+            // tableBtn
+            // 
+            this.tableBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.tableBtn.ColumnCount = 2;
+            this.tableBtn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableBtn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableBtn.Location = new System.Drawing.Point(105, 290);
+            this.tableBtn.Name = "tableBtn";
+            this.tableBtn.RowCount = 2;
+            this.tableBtn.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableBtn.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableBtn.Size = new System.Drawing.Size(535, 215);
+            this.tableBtn.TabIndex = 4;
+            // 
             // lblSalaOcupacao
             // 
             this.lblSalaOcupacao.AutoSize = true;
             this.lblSalaOcupacao.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.lblSalaOcupacao.Location = new System.Drawing.Point(101, 308);
+            this.lblSalaOcupacao.Location = new System.Drawing.Point(101, 250);
             this.lblSalaOcupacao.Name = "lblSalaOcupacao";
             this.lblSalaOcupacao.Size = new System.Drawing.Size(195, 24);
             this.lblSalaOcupacao.TabIndex = 3;
@@ -212,9 +230,9 @@
             this.gbConfigSala.Controls.Add(this.cbEscolherSessao);
             this.gbConfigSala.Controls.Add(this.lblSala);
             this.gbConfigSala.Controls.Add(this.lblSessao);
-            this.gbConfigSala.Location = new System.Drawing.Point(105, 58);
+            this.gbConfigSala.Location = new System.Drawing.Point(105, 47);
             this.gbConfigSala.Name = "gbConfigSala";
-            this.gbConfigSala.Size = new System.Drawing.Size(576, 231);
+            this.gbConfigSala.Size = new System.Drawing.Size(535, 189);
             this.gbConfigSala.TabIndex = 2;
             this.gbConfigSala.TabStop = false;
             this.gbConfigSala.Text = "Configurar Sala";
@@ -225,10 +243,10 @@
             this.btnModificarSala.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(185)))), ((int)(((byte)(221)))));
             this.btnModificarSala.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificarSala.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.btnModificarSala.Location = new System.Drawing.Point(357, 70);
+            this.btnModificarSala.Location = new System.Drawing.Point(334, 45);
             this.btnModificarSala.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificarSala.Name = "btnModificarSala";
-            this.btnModificarSala.Size = new System.Drawing.Size(172, 91);
+            this.btnModificarSala.Size = new System.Drawing.Size(169, 69);
             this.btnModificarSala.TabIndex = 6;
             this.btnModificarSala.Text = "CRIAR MODIFICAÇÃO";
             this.btnModificarSala.UseVisualStyleBackColor = false;
@@ -383,6 +401,19 @@
             this.pbSair.TabStop = false;
             this.pbSair.Click += new System.EventHandler(this.pbSair_Click);
             // 
+            // lblInfo
+            // 
+            this.lblInfo.BackColor = System.Drawing.Color.Silver;
+            this.lblInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfo.Location = new System.Drawing.Point(744, 5);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(271, 20);
+            this.lblInfo.TabIndex = 74;
+            // 
+            // cinemaTableAdapter1
+            // 
+            this.cinemaTableAdapter1.ClearBeforeFill = true;
+            // 
             // FormAtendimento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -390,6 +421,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(29)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(1027, 564);
             this.ControlBox = false;
+            this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.pbSair);
             this.Controls.Add(this.pbGestao);
             this.Controls.Add(this.lblgestao);
@@ -465,5 +497,8 @@
         private System.Windows.Forms.Label lblSala;
         private System.Windows.Forms.Label lblSessao;
         private System.Windows.Forms.PictureBox pbSair;
+        private System.Windows.Forms.Label lblInfo;
+        private System.Windows.Forms.TableLayoutPanel tableBtn;
+        private CineGestDataSet_CinemaTableAdapters.CinemaTableAdapter cinemaTableAdapter1;
     }
 }

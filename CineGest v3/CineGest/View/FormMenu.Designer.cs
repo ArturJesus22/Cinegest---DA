@@ -30,14 +30,23 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
             this.painelContentor = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.filmeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sessaoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.cineGestDataSet_Sessao = new WindowsFormsApp1.CineGestDataSet_Sessao();
             this.lblSessoesHoje = new System.Windows.Forms.Label();
-            this.lbSessoes = new System.Windows.Forms.ListBox();
             this.btnAdicionarBilhete = new System.Windows.Forms.Button();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.Label();
             this.txtTipoUser = new System.Windows.Forms.Label();
+            this.sessaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblUpperMenu = new System.Windows.Forms.Label();
             this.lblClientes = new System.Windows.Forms.Label();
             this.lblSessoes = new System.Windows.Forms.Label();
@@ -59,7 +68,17 @@ namespace WindowsFormsApp1
             this.pbGestao = new System.Windows.Forms.PictureBox();
             this.lblgestao = new System.Windows.Forms.Label();
             this.labelSessoes = new System.Windows.Forms.Label();
+            this.lblInfo = new System.Windows.Forms.Label();
+            this.cineGestDataSet1 = new WindowsFormsApp1.CineGestDataSet1();
+            this.cineGestDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cineGestDataSet2 = new WindowsFormsApp1.CineGestDataSet2();
+            this.cineGestDataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sessaoTableAdapter = new WindowsFormsApp1.CineGestDataSet_SessaoTableAdapters.SessaoTableAdapter();
             this.painelContentor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sessaoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cineGestDataSet_Sessao)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sessaoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogoMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDashboard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAtendimento)).BeginInit();
@@ -69,13 +88,17 @@ namespace WindowsFormsApp1
             ((System.ComponentModel.ISupportInitialize)(this.pbClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSair)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGestao)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cineGestDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cineGestDataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cineGestDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cineGestDataSet2BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // painelContentor
             // 
             this.painelContentor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.painelContentor.Controls.Add(this.dataGridView1);
             this.painelContentor.Controls.Add(this.lblSessoesHoje);
-            this.painelContentor.Controls.Add(this.lbSessoes);
             this.painelContentor.Controls.Add(this.btnAdicionarBilhete);
             this.painelContentor.Controls.Add(this.lblWelcome);
             this.painelContentor.Controls.Add(this.txtUsername);
@@ -85,25 +108,73 @@ namespace WindowsFormsApp1
             this.painelContentor.Size = new System.Drawing.Size(782, 537);
             this.painelContentor.TabIndex = 21;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.filmeDataGridViewTextBoxColumn,
+            this.salaDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.sessaoBindingSource1;
+            this.dataGridView1.Location = new System.Drawing.Point(62, 195);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(525, 272);
+            this.dataGridView1.TabIndex = 40;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "DataHora";
+            this.dataGridViewTextBoxColumn2.HeaderText = "DataHora";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Preco";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Preco";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // filmeDataGridViewTextBoxColumn
+            // 
+            this.filmeDataGridViewTextBoxColumn.DataPropertyName = "Filme";
+            this.filmeDataGridViewTextBoxColumn.HeaderText = "Filme";
+            this.filmeDataGridViewTextBoxColumn.Name = "filmeDataGridViewTextBoxColumn";
+            // 
+            // salaDataGridViewTextBoxColumn
+            // 
+            this.salaDataGridViewTextBoxColumn.DataPropertyName = "Sala";
+            this.salaDataGridViewTextBoxColumn.HeaderText = "Sala";
+            this.salaDataGridViewTextBoxColumn.Name = "salaDataGridViewTextBoxColumn";
+            // 
+            // sessaoBindingSource1
+            // 
+            this.sessaoBindingSource1.DataMember = "Sessao";
+            this.sessaoBindingSource1.DataSource = this.cineGestDataSet_Sessao;
+            // 
+            // cineGestDataSet_Sessao
+            // 
+            this.cineGestDataSet_Sessao.DataSetName = "CineGestDataSet_Sessao";
+            this.cineGestDataSet_Sessao.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // lblSessoesHoje
             // 
             this.lblSessoesHoje.AutoSize = true;
             this.lblSessoesHoje.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.lblSessoesHoje.Location = new System.Drawing.Point(88, 138);
+            this.lblSessoesHoje.Location = new System.Drawing.Point(58, 139);
             this.lblSessoesHoje.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSessoesHoje.Name = "lblSessoesHoje";
             this.lblSessoesHoje.Size = new System.Drawing.Size(195, 24);
             this.lblSessoesHoje.TabIndex = 39;
             this.lblSessoesHoje.Text = "Sessões para Hoje:";
-            // 
-            // lbSessoes
-            // 
-            this.lbSessoes.FormattingEnabled = true;
-            this.lbSessoes.Location = new System.Drawing.Point(92, 164);
-            this.lbSessoes.Margin = new System.Windows.Forms.Padding(2);
-            this.lbSessoes.Name = "lbSessoes";
-            this.lbSessoes.Size = new System.Drawing.Size(392, 303);
-            this.lbSessoes.TabIndex = 37;
             // 
             // btnAdicionarBilhete
             // 
@@ -111,7 +182,7 @@ namespace WindowsFormsApp1
             this.btnAdicionarBilhete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(185)))), ((int)(((byte)(221)))));
             this.btnAdicionarBilhete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdicionarBilhete.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.btnAdicionarBilhete.Location = new System.Drawing.Point(522, 264);
+            this.btnAdicionarBilhete.Location = new System.Drawing.Point(612, 269);
             this.btnAdicionarBilhete.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdicionarBilhete.Name = "btnAdicionarBilhete";
             this.btnAdicionarBilhete.Size = new System.Drawing.Size(143, 76);
@@ -136,7 +207,7 @@ namespace WindowsFormsApp1
             this.txtUsername.AutoSize = true;
             this.txtUsername.Font = new System.Drawing.Font("Arial", 15.75F);
             this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(185)))), ((int)(((byte)(221)))));
-            this.txtUsername.Location = new System.Drawing.Point(347, 71);
+            this.txtUsername.Location = new System.Drawing.Point(347, 62);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(71, 24);
@@ -147,12 +218,16 @@ namespace WindowsFormsApp1
             // 
             this.txtTipoUser.AutoSize = true;
             this.txtTipoUser.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTipoUser.Location = new System.Drawing.Point(328, 106);
+            this.txtTipoUser.Location = new System.Drawing.Point(334, 93);
             this.txtTipoUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtTipoUser.Name = "txtTipoUser";
             this.txtTipoUser.Size = new System.Drawing.Size(74, 18);
             this.txtTipoUser.TabIndex = 36;
             this.txtTipoUser.Text = "{tipouser}";
+            // 
+            // sessaoBindingSource
+            // 
+            this.sessaoBindingSource.DataMember = "Sessao";
             // 
             // lblUpperMenu
             // 
@@ -161,6 +236,7 @@ namespace WindowsFormsApp1
             this.lblUpperMenu.Name = "lblUpperMenu";
             this.lblUpperMenu.Size = new System.Drawing.Size(782, 31);
             this.lblUpperMenu.TabIndex = 20;
+            this.lblUpperMenu.Click += new System.EventHandler(this.lblUpperMenu_Click);
             // 
             // lblClientes
             // 
@@ -388,6 +464,39 @@ namespace WindowsFormsApp1
             this.labelSessoes.Text = "Sessões";
             this.labelSessoes.Click += new System.EventHandler(this.labelSessoes_Click);
             // 
+            // lblInfo
+            // 
+            this.lblInfo.BackColor = System.Drawing.Color.Silver;
+            this.lblInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfo.Location = new System.Drawing.Point(741, 5);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(271, 20);
+            this.lblInfo.TabIndex = 61;
+            // 
+            // cineGestDataSet1
+            // 
+            this.cineGestDataSet1.DataSetName = "CineGestDataSet1";
+            this.cineGestDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cineGestDataSet1BindingSource
+            // 
+            this.cineGestDataSet1BindingSource.DataSource = this.cineGestDataSet1;
+            this.cineGestDataSet1BindingSource.Position = 0;
+            // 
+            // cineGestDataSet2
+            // 
+            this.cineGestDataSet2.DataSetName = "CineGestDataSet2";
+            this.cineGestDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cineGestDataSet2BindingSource
+            // 
+            this.cineGestDataSet2BindingSource.DataSource = this.cineGestDataSet2;
+            this.cineGestDataSet2BindingSource.Position = 0;
+            // 
+            // sessaoTableAdapter
+            // 
+            this.sessaoTableAdapter.ClearBeforeFill = true;
+            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -395,6 +504,7 @@ namespace WindowsFormsApp1
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(29)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(1027, 564);
             this.ControlBox = false;
+            this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.labelSessoes);
             this.Controls.Add(this.pbGestao);
             this.Controls.Add(this.lblgestao);
@@ -425,6 +535,10 @@ namespace WindowsFormsApp1
             this.Load += new System.EventHandler(this.Form1_Load);
             this.painelContentor.ResumeLayout(false);
             this.painelContentor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sessaoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cineGestDataSet_Sessao)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sessaoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogoMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDashboard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAtendimento)).EndInit();
@@ -434,6 +548,10 @@ namespace WindowsFormsApp1
             ((System.ComponentModel.ISupportInitialize)(this.pbClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSair)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGestao)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cineGestDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cineGestDataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cineGestDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cineGestDataSet2BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -463,12 +581,33 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.PictureBox pbGestao;
         private System.Windows.Forms.Label lblgestao;
         private System.Windows.Forms.Label lblSessoesHoje;
-        private System.Windows.Forms.ListBox lbSessoes;
         private System.Windows.Forms.Button btnAdicionarBilhete;
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Label txtUsername;
         private System.Windows.Forms.Label txtTipoUser;
         private System.Windows.Forms.Label labelSessoes;
+        private System.Windows.Forms.Label lblInfo;
+        //private CineGestDataSet_Sessoes cineGestDataSet_Sessoes;
+        private System.Windows.Forms.BindingSource sessaoBindingSource;
+        //private CineGestDataSet_SessoesTableAdapters.SessaoTableAdapter sessaoTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataHoraDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn salaidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn filmeidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource cineGestDataSet2BindingSource;
+        private CineGestDataSet2 cineGestDataSet2;
+        private CineGestDataSet1 cineGestDataSet1;
+        private System.Windows.Forms.BindingSource cineGestDataSet1BindingSource;
+        private CineGestDataSet_Sessao cineGestDataSet_Sessao;
+        private System.Windows.Forms.BindingSource sessaoBindingSource1;
+        private CineGestDataSet_SessaoTableAdapters.SessaoTableAdapter sessaoTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn filmeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn salaDataGridViewTextBoxColumn;
     }
 }
 

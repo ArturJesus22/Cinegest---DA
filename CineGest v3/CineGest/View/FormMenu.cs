@@ -28,28 +28,37 @@ namespace WindowsFormsApp1
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.sessaoTableAdapter.Fill(this.cineGestDataSet_Sessao.Sessao);
+
             string dia = DateTime.Now.ToString("dddd, dd MMMM yyyy");
             lb_data.Text = dia;
             string permissao = DBConnection.permissaoUsuario;
             string username = FormLogin.username_global;
-
-            txtUsername.Text = username;
+            string conversao = "";
+            string cinema = mainController.getCinema();
 
             if (permissao == "1")
             {
                 lblgestao.Visible = false;
                 pbGestao.Visible = false;
-                txtTipoUser.Text = "Funcionário";
+                conversao = "Funcionário";
+                txtTipoUser.Text = conversao;
             }
             else if (permissao == "2")
             {
                 lblgestao.Visible = true;
                 pbGestao.Visible = true;
-                txtTipoUser.Text = "Administrador";
-            } 
-            
+                conversao = "Administrador";
+                txtTipoUser.Text = conversao;
+            }
+            string info = username + " (" + conversao + ")" + " " + "@" + " " + cinema;
+            lblInfo.Text = info;
+
+            txtUsername.Text = username + "!";
+            lblInfo.Text = info;
         }
-    
+
+
         private void lblAtendimento_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -98,6 +107,10 @@ namespace WindowsFormsApp1
 
         }
 
+        private void lblUpperMenu_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

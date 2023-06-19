@@ -8,14 +8,13 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Windows.Forms;
 using System.Drawing.Text;
 using System.Data;
+using System.Collections;
 
 namespace WindowsFormsApp1.Model
-{    
+{
     public class DBConnection : FormLogin
     {
         public static string permissaoUsuario;
-
-        SqlConnection con = new SqlConnection();
 
         public bool DBConnect(string username, string password, out string permissao)
         {
@@ -27,18 +26,21 @@ namespace WindowsFormsApp1.Model
                 {
                     conn.Open();
 
-                    string sql = "SELECT COUNT(*) FROM Login WHERE Utilizador = @username";
-                    SqlCommand cmd = new SqlCommand(sql, conn);
-                    cmd.Parameters.AddWithValue("@username", username);
+                    string sql = "SELECT COUNT(*) FROM Login WHERE Utilizador = @Utilizador AND Password = @Password";
 
-                    int count = (int)cmd.ExecuteScalar();
+                    SqlCommand command = new SqlCommand(sql, conn);
+                    command.Parameters.AddWithValue("@Utilizador", username);
+                    command.Parameters.AddWithValue("@Password", password);
+
+                    int count = (int)command.ExecuteScalar();
 
                     if (count > 0)
                     {
-                        sql = "SELECT Permissoes FROM Login WHERE Utilizador = @username";
-                        cmd = new SqlCommand(sql, conn);
-                        cmd.Parameters.AddWithValue("@username", username);
-                        permissao = cmd.ExecuteScalar()?.ToString();
+                        sql = "SELECT Permissoes FROM Login WHERE Utilizador = @Utilizador AND Password = @Password";
+                        command = new SqlCommand(sql, conn);
+                        command.Parameters.AddWithValue("@Utilizador", username);
+                        command.Parameters.AddWithValue("@Password", password);
+                        permissao = command.ExecuteScalar()?.ToString();
                         permissaoUsuario = permissao;
                         return true;
                     }
@@ -46,15 +48,11 @@ namespace WindowsFormsApp1.Model
             }
             catch (Exception e)
             {
-                MessageBox.Show("An error occurred: " + e.Message);
+                MessageBox.Show("Ocorreu um erro: " + e.Message);
             }
 
             permissao = null;
             return false;
         }
-
-
     }
 }
-
-

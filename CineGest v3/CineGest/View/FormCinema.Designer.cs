@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCinema));
             this.pbGestao = new System.Windows.Forms.PictureBox();
             this.lblgestao = new System.Windows.Forms.Label();
@@ -41,16 +42,23 @@
             this.pbLogoMenu = new System.Windows.Forms.PictureBox();
             this.lb_data = new System.Windows.Forms.Label();
             this.painelContentor = new System.Windows.Forms.Panel();
-            this.lbSalasExistentes = new System.Windows.Forms.ListBox();
+            this.dataGridView_Salas = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.filasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cinemaidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cineGestDataSet_Salas = new WindowsFormsApp1.CineGestDataSet_Salas();
             this.gbConfigCinema = new System.Windows.Forms.GroupBox();
-            this.updownQuantSalas = new System.Windows.Forms.NumericUpDown();
+            this.txtNomeSala = new System.Windows.Forms.TextBox();
             this.gbTamanhoSala = new System.Windows.Forms.GroupBox();
             this.btnAdicionarSala = new System.Windows.Forms.Button();
             this.updownLinhas = new System.Windows.Forms.NumericUpDown();
             this.updownColunas = new System.Windows.Forms.NumericUpDown();
             this.lblLinhas = new System.Windows.Forms.Label();
             this.lblColunas = new System.Windows.Forms.Label();
-            this.lblQuantSalas = new System.Windows.Forms.Label();
+            this.lblNomeSala = new System.Windows.Forms.Label();
             this.pbAtendimento = new System.Windows.Forms.PictureBox();
             this.lblUpperMenu = new System.Windows.Forms.Label();
             this.lblClientes = new System.Windows.Forms.Label();
@@ -60,6 +68,8 @@
             this.lblAtendimento = new System.Windows.Forms.Label();
             this.lblDashboard = new System.Windows.Forms.Label();
             this.lblMenuMenu = new System.Windows.Forms.Label();
+            this.salaTableAdapter = new WindowsFormsApp1.CineGestDataSet_SalasTableAdapters.SalaTableAdapter();
+            this.lblInfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbGestao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSair)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbClientes)).BeginInit();
@@ -69,8 +79,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbCinema)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogoMenu)).BeginInit();
             this.painelContentor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Salas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cineGestDataSet_Salas)).BeginInit();
             this.gbConfigCinema.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.updownQuantSalas)).BeginInit();
             this.gbTamanhoSala.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.updownLinhas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updownColunas)).BeginInit();
@@ -205,27 +217,77 @@
             // painelContentor
             // 
             this.painelContentor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.painelContentor.Controls.Add(this.lbSalasExistentes);
+            this.painelContentor.Controls.Add(this.dataGridView_Salas);
             this.painelContentor.Controls.Add(this.gbConfigCinema);
             this.painelContentor.Location = new System.Drawing.Point(246, 30);
             this.painelContentor.Name = "painelContentor";
             this.painelContentor.Size = new System.Drawing.Size(782, 537);
             this.painelContentor.TabIndex = 42;
             // 
-            // lbSalasExistentes
+            // dataGridView_Salas
             // 
-            this.lbSalasExistentes.FormattingEnabled = true;
-            this.lbSalasExistentes.Location = new System.Drawing.Point(103, 273);
-            this.lbSalasExistentes.Name = "lbSalasExistentes";
-            this.lbSalasExistentes.Size = new System.Drawing.Size(576, 238);
-            this.lbSalasExistentes.TabIndex = 4;
+            this.dataGridView_Salas.AutoGenerateColumns = false;
+            this.dataGridView_Salas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Salas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.nomeDataGridViewTextBoxColumn,
+            this.colunasDataGridViewTextBoxColumn,
+            this.filasDataGridViewTextBoxColumn,
+            this.cinemaidDataGridViewTextBoxColumn});
+            this.dataGridView_Salas.DataSource = this.salaBindingSource;
+            this.dataGridView_Salas.Location = new System.Drawing.Point(129, 255);
+            this.dataGridView_Salas.Name = "dataGridView_Salas";
+            this.dataGridView_Salas.Size = new System.Drawing.Size(541, 267);
+            this.dataGridView_Salas.TabIndex = 4;
+            this.dataGridView_Salas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Salas_CellContentClick);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            // 
+            // colunasDataGridViewTextBoxColumn
+            // 
+            this.colunasDataGridViewTextBoxColumn.DataPropertyName = "Colunas";
+            this.colunasDataGridViewTextBoxColumn.HeaderText = "Colunas";
+            this.colunasDataGridViewTextBoxColumn.Name = "colunasDataGridViewTextBoxColumn";
+            // 
+            // filasDataGridViewTextBoxColumn
+            // 
+            this.filasDataGridViewTextBoxColumn.DataPropertyName = "Filas";
+            this.filasDataGridViewTextBoxColumn.HeaderText = "Filas";
+            this.filasDataGridViewTextBoxColumn.Name = "filasDataGridViewTextBoxColumn";
+            // 
+            // cinemaidDataGridViewTextBoxColumn
+            // 
+            this.cinemaidDataGridViewTextBoxColumn.DataPropertyName = "Cinema_id";
+            this.cinemaidDataGridViewTextBoxColumn.HeaderText = "Cinema_id";
+            this.cinemaidDataGridViewTextBoxColumn.Name = "cinemaidDataGridViewTextBoxColumn";
+            // 
+            // salaBindingSource
+            // 
+            this.salaBindingSource.DataMember = "Sala";
+            this.salaBindingSource.DataSource = this.cineGestDataSet_Salas;
+            // 
+            // cineGestDataSet_Salas
+            // 
+            this.cineGestDataSet_Salas.DataSetName = "CineGestDataSet_Salas";
+            this.cineGestDataSet_Salas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gbConfigCinema
             // 
             this.gbConfigCinema.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.gbConfigCinema.Controls.Add(this.updownQuantSalas);
+            this.gbConfigCinema.Controls.Add(this.txtNomeSala);
             this.gbConfigCinema.Controls.Add(this.gbTamanhoSala);
-            this.gbConfigCinema.Controls.Add(this.lblQuantSalas);
+            this.gbConfigCinema.Controls.Add(this.lblNomeSala);
             this.gbConfigCinema.Location = new System.Drawing.Point(103, 26);
             this.gbConfigCinema.Name = "gbConfigCinema";
             this.gbConfigCinema.Size = new System.Drawing.Size(576, 223);
@@ -233,12 +295,12 @@
             this.gbConfigCinema.TabStop = false;
             this.gbConfigCinema.Text = "Configurar Sala";
             // 
-            // updownQuantSalas
+            // txtNomeSala
             // 
-            this.updownQuantSalas.Location = new System.Drawing.Point(188, 33);
-            this.updownQuantSalas.Name = "updownQuantSalas";
-            this.updownQuantSalas.Size = new System.Drawing.Size(57, 20);
-            this.updownQuantSalas.TabIndex = 3;
+            this.txtNomeSala.Location = new System.Drawing.Point(132, 31);
+            this.txtNomeSala.Name = "txtNomeSala";
+            this.txtNomeSala.Size = new System.Drawing.Size(132, 20);
+            this.txtNomeSala.TabIndex = 3;
             // 
             // gbTamanhoSala
             // 
@@ -262,7 +324,7 @@
             this.btnAdicionarSala.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(185)))), ((int)(((byte)(221)))));
             this.btnAdicionarSala.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdicionarSala.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.btnAdicionarSala.Location = new System.Drawing.Point(336, 18);
+            this.btnAdicionarSala.Location = new System.Drawing.Point(334, 35);
             this.btnAdicionarSala.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdicionarSala.Name = "btnAdicionarSala";
             this.btnAdicionarSala.Size = new System.Drawing.Size(143, 76);
@@ -305,15 +367,15 @@
             this.lblColunas.TabIndex = 1;
             this.lblColunas.Text = "Colunas:";
             // 
-            // lblQuantSalas
+            // lblNomeSala
             // 
-            this.lblQuantSalas.AutoSize = true;
-            this.lblQuantSalas.Font = new System.Drawing.Font("Arial", 10.75F);
-            this.lblQuantSalas.Location = new System.Drawing.Point(23, 33);
-            this.lblQuantSalas.Name = "lblQuantSalas";
-            this.lblQuantSalas.Size = new System.Drawing.Size(148, 17);
-            this.lblQuantSalas.TabIndex = 0;
-            this.lblQuantSalas.Text = "Quantidade de Salas:";
+            this.lblNomeSala.AutoSize = true;
+            this.lblNomeSala.Font = new System.Drawing.Font("Arial", 10.75F);
+            this.lblNomeSala.Location = new System.Drawing.Point(23, 33);
+            this.lblNomeSala.Name = "lblNomeSala";
+            this.lblNomeSala.Size = new System.Drawing.Size(104, 17);
+            this.lblNomeSala.TabIndex = 0;
+            this.lblNomeSala.Text = "Nome da Sala:";
             // 
             // pbAtendimento
             // 
@@ -417,6 +479,19 @@
             this.lblMenuMenu.TabIndex = 34;
             this.lblMenuMenu.Text = "Menu";
             // 
+            // salaTableAdapter
+            // 
+            this.salaTableAdapter.ClearBeforeFill = true;
+            // 
+            // lblInfo
+            // 
+            this.lblInfo.BackColor = System.Drawing.Color.Silver;
+            this.lblInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfo.Location = new System.Drawing.Point(744, 6);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(271, 20);
+            this.lblInfo.TabIndex = 62;
+            // 
             // FormCinema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -424,6 +499,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(29)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(1027, 564);
             this.ControlBox = false;
+            this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.pbGestao);
             this.Controls.Add(this.lblgestao);
             this.Controls.Add(this.label1);
@@ -459,9 +535,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbCinema)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogoMenu)).EndInit();
             this.painelContentor.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Salas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cineGestDataSet_Salas)).EndInit();
             this.gbConfigCinema.ResumeLayout(false);
             this.gbConfigCinema.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.updownQuantSalas)).EndInit();
             this.gbTamanhoSala.ResumeLayout(false);
             this.gbTamanhoSala.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.updownLinhas)).EndInit();
@@ -495,15 +573,24 @@
         private System.Windows.Forms.Label lblAtendimento;
         private System.Windows.Forms.Label lblDashboard;
         private System.Windows.Forms.Label lblMenuMenu;
-        private System.Windows.Forms.ListBox lbSalasExistentes;
         private System.Windows.Forms.GroupBox gbConfigCinema;
-        private System.Windows.Forms.NumericUpDown updownQuantSalas;
         private System.Windows.Forms.GroupBox gbTamanhoSala;
         private System.Windows.Forms.Button btnAdicionarSala;
         private System.Windows.Forms.NumericUpDown updownLinhas;
         private System.Windows.Forms.NumericUpDown updownColunas;
         private System.Windows.Forms.Label lblLinhas;
         private System.Windows.Forms.Label lblColunas;
-        private System.Windows.Forms.Label lblQuantSalas;
+        private System.Windows.Forms.Label lblNomeSala;
+        private System.Windows.Forms.TextBox txtNomeSala;
+        private System.Windows.Forms.DataGridView dataGridView_Salas;
+        private CineGestDataSet_Salas cineGestDataSet_Salas;
+        private System.Windows.Forms.BindingSource salaBindingSource;
+        private CineGestDataSet_SalasTableAdapters.SalaTableAdapter salaTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunasDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn filasDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cinemaidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label lblInfo;
     }
 }

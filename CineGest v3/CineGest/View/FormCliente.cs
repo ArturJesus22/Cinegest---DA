@@ -15,10 +15,12 @@ namespace WindowsFormsApp1.View
     public partial class FormCliente : Form
     {
         private MainController mainController;
+        private Cliente clienteController;
         public FormCliente()
         {
             InitializeComponent();
             mainController = new MainController();
+            clienteController = new Cliente();
         }
 
         private void btnRegistarCliente_Click(object sender, EventArgs e)
@@ -27,12 +29,12 @@ namespace WindowsFormsApp1.View
             string nome = txtNome.Text;
             string morada = txtMorada.Text;
 
-            if(!string.IsNullOrEmpty(nome) && !string.IsNullOrEmpty(morada) && !string.IsNullOrEmpty(numFiscal))
+            if (!string.IsNullOrEmpty(nome) && !string.IsNullOrEmpty(morada) && !string.IsNullOrEmpty(numFiscal))
             {
                 try
                 {
                     Cliente.RegistarCliente(numFiscal, nome, morada);
-                    MessageBox.Show("Registo de cliente bem sucedido.");
+                    clienteController.gridviewUpdateClientes(dataGridView_Clientes);
                 }
                 catch (Exception ex)
                 {
@@ -98,21 +100,58 @@ namespace WindowsFormsApp1.View
 
         private void FormCliente_Load(object sender, EventArgs e)
         {
+            this.clienteTableAdapter.Fill(this.cineGestDataSet1.Cliente);
             string dia = DateTime.Now.ToString("dddd, dd MMMM yyyy");
             lb_data.Text = dia;
+            string username = FormLogin.username_global;
+            string conversao = "";
             string permissao = DBConnection.permissaoUsuario;
-
+            string cinema = mainController.getCinema();
 
             if (permissao == "1")
             {
                 lblgestao.Visible = false;
                 pbGestao.Visible = false;
+                conversao = "Funcionário";
             }
             else if (permissao == "2")
             {
                 lblgestao.Visible = true;
                 pbGestao.Visible = true;
+                conversao = "Administrador";
             }
+
+            string info = username + " (" + conversao + ")" + " " + "@" + " " + cinema;
+            lblInfo.Text = info;
+        }
+
+        private void dataGridView_Clientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridView_Clientes.Rows[e.RowIndex];
+
+                txtNIF.Text = row.Cells[1].Value.ToString(); // Coluna 2
+                txtNome.Text = row.Cells[2].Value.ToString(); // Coluna 3
+                txtMorada.Text = row.Cells[3].Value.ToString(); // Coluna 4
+            }
+        }
+
+        private void btnModificarCliente_Click_2(object sender, EventArgs e)
+        {
+            if (dataGridView_Clientes.CurrentRow != null)
+            {
+                DataGridViewRow selectedRow = dataGridView_Clientes.CurrentRow;
+
+
+                string novoNomeCliente = txtNome.Text;
+                string novaMorada = txtMorada.Text;
+                string novoNIF = txtNIF.Text;
+
+                Cliente cliente = new Cliente();
+                Cliente.AlterarCliente(novoNomeCliente, novaMorada, novoNIF, selectedRow);
+            }
+            clienteController.gridviewUpdateClientes(dataGridView_Clientes);
         }
     }
 }
