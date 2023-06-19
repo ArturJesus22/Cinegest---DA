@@ -205,7 +205,7 @@ namespace WindowsFormsApp1.View
         {
             if (cbPerms.SelectedItem != null)
             {
-                DataGridViewRow selectedRow = dataGridView1.CurrentRow;
+                DataGridViewRow selectedRow = dataGridView_Users.CurrentRow;
                 string novasPerms = cbPerms.SelectedItem.ToString();
                 string novoNomeUser = txtNomeCinema.Text;
                 string novaPassword = txt_password.Text;
