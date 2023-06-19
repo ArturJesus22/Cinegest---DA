@@ -31,6 +31,12 @@
  - Microsoft Visual Studio (2015 ou mais recente) 
  - Microsoft .NET Framework instalada
 
+## Known Issues
+
+ - Falha em Algumas Validações
+ - Atribuição de Bilhetes não funcional
+ - Sistema apenas funciona corretamente em `C:\Users\Username\Desktop`
+
 ## Developers
 
 > **Tomás Coelho** /
