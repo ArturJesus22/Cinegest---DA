@@ -42,3 +42,5 @@
 > **Tomás Coelho** /
 > **Artur Jesus** / 
 > **Gonçalo Delgado**
+
+![](https://www.ipleiria.pt/wp-content/themes/ipleiria/img/logo_ipl_header.png)
